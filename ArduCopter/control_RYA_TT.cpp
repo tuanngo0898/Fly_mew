@@ -52,11 +52,17 @@ bool Copter::RYA_TT_init(bool ignore_checks)
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
+    int X_err_in_pixel, Y_err_in_pixel;
+    int height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
+    float curr_height = (float)height;  // cm
+    float curr_roll = ahrs.roll;        // rad
+    float curr_pitch = ahrs.pitch;      // rad
+
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
-    int X_err_in_pixel, Y_err_in_pixel;
     TCP_decode(X_err_in_pixel,Y_err_in_pixel,client_mess);
-    cliSerial->printf("%d %d\n", X_err_in_pixel, Y_err_in_pixel);
+
+    cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
 }
 
 bool server_init(void){
