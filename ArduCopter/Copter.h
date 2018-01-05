@@ -775,6 +775,10 @@ private:
     void log_picture();
     MAV_RESULT mavlink_compassmot(mavlink_channel_t chan);
     void delay(uint32_t ms);
+
+    bool RYA_TT_init(bool ignore_checks);
+    void RYA_TT_run();
+
     bool acro_init(bool ignore_checks);
     void acro_run();
     void get_pilot_desired_angle_rates(int16_t roll_in, int16_t pitch_in, int16_t yaw_in, float &roll_out, float &pitch_out, float &yaw_out);
