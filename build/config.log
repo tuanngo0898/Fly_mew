@@ -1,13 +1,13 @@
-# project  configured on Fri Jan  5 19:44:55 2018 by
+# project  configured on Fri Jan  5 20:09:22 2018 by
 # waf 1.9.2 (abi 99, python 2070ef0 on linux2)
-# using /home/light/drone/FlyMew_Ardupilot/modules/waf/waf-light configure --board=bbbmini
+# using /home/light/github/Fly_mew/modules/waf/waf-light configure --board=bbbmini
 #
 ----------------------------------------
 Setting top to
-/home/light/drone/FlyMew_Ardupilot
+/home/light/github/Fly_mew
 ----------------------------------------
 Setting out to
-/home/light/drone/FlyMew_Ardupilot/build
+/home/light/github/Fly_mew/build
 ----------------------------------------
 Autoconfiguration
 enabled
@@ -927,12 +927,12 @@ Checking for need to link with librt
             clock_gettime(CLOCK_REALTIME, NULL);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_8860d81ee59844c9a2f341bd1ecfb866/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_7d1176e07ecbc995507b403fbffb1c23/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_8860d81ee59844c9a2f341bd1ecfb866/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_8860d81ee59844c9a2f341bd1ecfb866/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_7d1176e07ecbc995507b403fbffb1c23/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_7d1176e07ecbc995507b403fbffb1c23/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_8860d81ee59844c9a2f341bd1ecfb866/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_7d1176e07ecbc995507b403fbffb1c23/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 not necessary
 -----------------------------------------------------
 Checking for 'lttng-ust'
@@ -943,18 +943,18 @@ to the PKG_CONFIG_PATH environment variable
 No package 'lttng-ust' found
 
 not found
-from /home/light/drone/FlyMew_Ardupilot: The configuration failed
+from /home/light/github/Fly_mew: The configuration failed
 -----------------------------------------------------
 Testing link with lttng-ust
 ==>
 int main() { return 0; }
 <==
-[1/2] Compiling [32mbuild/.conf_check_409166a4e7b5089652fe94a0c0af520c/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_971cc4cbe31ceb200adbc59c8211bf89/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_409166a4e7b5089652fe94a0c0af520c/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_409166a4e7b5089652fe94a0c0af520c/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_971cc4cbe31ceb200adbc59c8211bf89/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_971cc4cbe31ceb200adbc59c8211bf89/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_409166a4e7b5089652fe94a0c0af520c/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_971cc4cbe31ceb200adbc59c8211bf89/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
 yes
 -----------------------------------------------------
 Checking for library dl
@@ -966,12 +966,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_de0a19f07fda0028641418fa9879bbb2/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c85a73e7bbc05c75b2817092e8588e81/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_de0a19f07fda0028641418fa9879bbb2/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_de0a19f07fda0028641418fa9879bbb2/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_c85a73e7bbc05c75b2817092e8588e81/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c85a73e7bbc05c75b2817092e8588e81/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_de0a19f07fda0028641418fa9879bbb2/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_c85a73e7bbc05c75b2817092e8588e81/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
 yes
 -----------------------------------------------------
 Checking for 'libiio'
@@ -982,18 +982,18 @@ to the PKG_CONFIG_PATH environment variable
 No package 'libiio' found
 
 not found
-from /home/light/drone/FlyMew_Ardupilot: The configuration failed
+from /home/light/github/Fly_mew: The configuration failed
 -----------------------------------------------------
 Testing link with libiio
 ==>
 int main() { return 0; }
 <==
-[1/2] Compiling [32mbuild/.conf_check_64f838b0c7799adaadf57e8f9e91c679/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_cbf55e4ff8f0a7c873711bab4aa3ac33/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_64f838b0c7799adaadf57e8f9e91c679/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_64f838b0c7799adaadf57e8f9e91c679/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_cbf55e4ff8f0a7c873711bab4aa3ac33/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_cbf55e4ff8f0a7c873711bab4aa3ac33/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_64f838b0c7799adaadf57e8f9e91c679/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_cbf55e4ff8f0a7c873711bab4aa3ac33/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-ldl']
 yes
 -----------------------------------------------------
 Checking for HAVE_CMATH_ISFINITE
@@ -1005,12 +1005,12 @@ Checking for HAVE_CMATH_ISFINITE
           return std::isfinite(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_084126a692102a60ab330ba517c319b4/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_a56c7b2156af2e61dd2b9c21c1628810/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_084126a692102a60ab330ba517c319b4/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_084126a692102a60ab330ba517c319b4/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_a56c7b2156af2e61dd2b9c21c1628810/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a56c7b2156af2e61dd2b9c21c1628810/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_084126a692102a60ab330ba517c319b4/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_a56c7b2156af2e61dd2b9c21c1628810/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for HAVE_CMATH_ISINF
@@ -1022,12 +1022,12 @@ Checking for HAVE_CMATH_ISINF
           return std::isinf(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_ff73e6c131519eec5e6cea952a5e1260/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_487dacca253eeeaed7d55de5e5bc59de/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_ff73e6c131519eec5e6cea952a5e1260/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ff73e6c131519eec5e6cea952a5e1260/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_487dacca253eeeaed7d55de5e5bc59de/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_487dacca253eeeaed7d55de5e5bc59de/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_ff73e6c131519eec5e6cea952a5e1260/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_487dacca253eeeaed7d55de5e5bc59de/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for HAVE_CMATH_ISNAN
@@ -1039,12 +1039,12 @@ Checking for HAVE_CMATH_ISNAN
           return std::isnan(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_1c6f48bb32872b1c6b9e566d1950f5e9/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c26cd03eb03ffad61d25facf66f08a4f/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_1c6f48bb32872b1c6b9e566d1950f5e9/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_1c6f48bb32872b1c6b9e566d1950f5e9/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_c26cd03eb03ffad61d25facf66f08a4f/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c26cd03eb03ffad61d25facf66f08a4f/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_1c6f48bb32872b1c6b9e566d1950f5e9/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_c26cd03eb03ffad61d25facf66f08a4f/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE
@@ -1059,12 +1059,12 @@ Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE
           return isfinite((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_65f76e188b55a8fa2d48ac33f25c1e8b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f523257de8ced6237837bc2fc33cd6c1/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_65f76e188b55a8fa2d48ac33f25c1e8b/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_65f76e188b55a8fa2d48ac33f25c1e8b/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_f523257de8ced6237837bc2fc33cd6c1/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f523257de8ced6237837bc2fc33cd6c1/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_65f76e188b55a8fa2d48ac33f25c1e8b/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_f523257de8ced6237837bc2fc33cd6c1/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for NEED_CMATH_ISINF_STD_NAMESPACE
@@ -1079,12 +1079,12 @@ Checking for NEED_CMATH_ISINF_STD_NAMESPACE
           return isinf((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_111ab60ce2b2c3727a316fd3f2dab15e/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_651611c1893086e0a8d8a9f6281efaa5/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_111ab60ce2b2c3727a316fd3f2dab15e/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_111ab60ce2b2c3727a316fd3f2dab15e/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_651611c1893086e0a8d8a9f6281efaa5/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_651611c1893086e0a8d8a9f6281efaa5/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_111ab60ce2b2c3727a316fd3f2dab15e/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_651611c1893086e0a8d8a9f6281efaa5/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for NEED_CMATH_ISNAN_STD_NAMESPACE
@@ -1099,12 +1099,12 @@ Checking for NEED_CMATH_ISNAN_STD_NAMESPACE
           return isnan((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_e0bef806381b98d91402d8e54775ceba/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_e7209c1d0ec493c1e10a5b79cf45de55/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_e0bef806381b98d91402d8e54775ceba/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_e0bef806381b98d91402d8e54775ceba/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_e7209c1d0ec493c1e10a5b79cf45de55/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_e7209c1d0ec493c1e10a5b79cf45de55/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_e0bef806381b98d91402d8e54775ceba/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_e7209c1d0ec493c1e10a5b79cf45de55/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for header endian.h
@@ -1117,12 +1117,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_3afd0054caa2440c1938fef0ed19e698/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_0f28185e3b37d3f0b3a6161c5ab22270/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_3afd0054caa2440c1938fef0ed19e698/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_3afd0054caa2440c1938fef0ed19e698/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_0f28185e3b37d3f0b3a6161c5ab22270/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_0f28185e3b37d3f0b3a6161c5ab22270/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_3afd0054caa2440c1938fef0ed19e698/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_0f28185e3b37d3f0b3a6161c5ab22270/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for header byteswap.h
@@ -1135,12 +1135,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_53fd882b61b446579f973af984d81dc2/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_1aaee99c4cfd2951d8464d2626f5b485/test.cpp[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '-DHAVE_ENDIAN_H=1', '../../test.cpp', '-c', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_53fd882b61b446579f973af984d81dc2/testbuild/bbbmini/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_53fd882b61b446579f973af984d81dc2/testbuild/bbbmini/testprog[0m
+['/usr/bin/arm-linux-gnueabihf-g++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Wfatal-errors', '-Werror=unused-but-set-variable', '-O3', '-DCONFIG_HAL_BOARD=HAL_BOARD_LINUX', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_LIBDL=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '-DHAVE_ENDIAN_H=1', '../../test.cpp', '-c', '-o/home/light/github/Fly_mew/build/.conf_check_1aaee99c4cfd2951d8464d2626f5b485/testbuild/bbbmini/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_1aaee99c4cfd2951d8464d2626f5b485/testbuild/bbbmini/testprog[0m
 
-['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/drone/FlyMew_Ardupilot/build/.conf_check_53fd882b61b446579f973af984d81dc2/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
+['/usr/bin/arm-linux-gnueabihf-g++', '-Wl,--gc-sections', '-pthread', 'test.cpp.1.o', '-o/home/light/github/Fly_mew/build/.conf_check_1aaee99c4cfd2951d8464d2626f5b485/testbuild/bbbmini/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-ldl']
 yes
 -----------------------------------------------------
 Checking for program 'python'
