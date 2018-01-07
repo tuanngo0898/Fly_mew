@@ -57,8 +57,8 @@ void Copter::RYA_TT_run()
     int X_err_in_pixel, Y_err_in_pixel;
     int height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
     float curr_height = (float)height;  // cm
-    float curr_roll = ahrs.roll;        // rad
-    float curr_pitch = ahrs.pitch;      // rad
+    // float curr_roll = ahrs.roll;        // rad
+    // float curr_pitch = ahrs.pitch;      // rad
 
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
@@ -216,6 +216,7 @@ bool server_init(void){
 
         fcntl(server_socket, F_SETFL, fcntl(server_socket, F_GETFL, 0) | O_NONBLOCK);
     }
+    return true;
 }
 bool TCP_decode(int &X_err_in_pixel, int &Y_err_in_pixel, char *str){
     char client_mess_x[5] = {0, 0, 0, 0, 0};
