@@ -19,7 +19,7 @@ int str_to_int(char *str);
 int four_char_to_int(char *mess);
 
 bool server_init(void);
-bool TCP_decode(int &X_err_in_pixel, int &Y_err_in_pixel, char *str);
+bool obj_position_in_pixel(int &X_err_in_pixel, int &Y_err_in_pixel, char *str);
 
 /*
  * Init and run calls for althold, flight mode
@@ -62,15 +62,18 @@ void Copter::RYA_TT_run()
 
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
-    TCP_decode(X_err_in_pixel,Y_err_in_pixel,client_mess);
+    bool isThereaAnyObject = obj_position_in_pixel(X_err_in_pixel, Y_err_in_pixel, client_mess);
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
-
+    cliSerial->printf("client mess: %s \n",client_mess);
     // Process information
-    
-    float pixel_per_cm = curr_height*0.8871428438*2/800;
-    float X_err_in_cm = X_err_in_pixel*pixel_per_cm;
-    float Y_err_in_cm = Y_err_in_pixel*pixel_per_cm;
-    cliSerial->printf("%f %f\n", X_err_in_cm, Y_err_in_cm);
+    if (isThereaAnyObject){
+        float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+        float X_err_in_cm = X_err_in_pixel * pixel_per_cm;
+        float Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
+        cliSerial->printf("%f %f\n", X_err_in_cm, Y_err_in_cm);
+    }
+    else
+        cliSerial->printf("no object \n");
 
     // Use information
     AltHoldModeState althold_state;
@@ -218,7 +221,7 @@ bool server_init(void){
     }
     return true;
 }
-bool TCP_decode(int &X_err_in_pixel, int &Y_err_in_pixel, char *str){
+bool obj_position_in_pixel(int &X_err_in_pixel, int &Y_err_in_pixel, char *str){
     char client_mess_x[5] = {0, 0, 0, 0, 0};
     char client_mess_y[5] = {0, 0, 0, 0, 0};
     int i = 0;
@@ -230,7 +233,9 @@ bool TCP_decode(int &X_err_in_pixel, int &Y_err_in_pixel, char *str){
     }
     X_err_in_pixel = four_char_to_int(client_mess_x);
     Y_err_in_pixel = four_char_to_int(client_mess_y);
-    return true;
+    bool _isThereaAnyObject = false;
+    if(str[8] == '1') _isThereaAnyObject = true;
+    return _isThereaAnyObject;
 }
 int four_char_to_int(char *mess){
 
