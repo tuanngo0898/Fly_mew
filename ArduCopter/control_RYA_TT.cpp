@@ -25,7 +25,7 @@ bool decode(char *msg, int &errX, int &errY);
 // althold_init - initialise althold controller
 bool Copter::RYA_TT_init(bool ignore_checks)
 {
-
+    memset(client_mess, 0, sizeof(client_mess));
     // init server TCP_IP: 127.0.0.1, port: 9000
     server_init();
 
@@ -67,8 +67,9 @@ void Copter::RYA_TT_run()
     bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
 
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
-    cliSerial->printf("client mess: %s \n",client_mess);
-    cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
+    // cliSerial->printf("client mess: %s \n",client_mess);
+    // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
+
     // Process information
     if (isThereaAnyObject){
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
@@ -155,7 +156,7 @@ void Copter::RYA_TT_run()
 
         // call attitude controller
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
-
+        
         // call position controller
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->add_takeoff_climb_rate(takeoff_climb_rate, G_Dt);
@@ -185,7 +186,11 @@ void Copter::RYA_TT_run()
         motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
         // call attitude controller
+        target_roll = (int)X_err_in_cm*5;
+        target_pitch = -(int)Y_err_in_cm*5;
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
+        cliSerial->printf("target_roll target_pitch: %f %f \n", target_roll, target_pitch);
+        // cliSerial->printf("roll pitch: %f %f \n", target_roll, target_pitch);
 
         // adjust climb rate using rangefinder
         if (rangefinder_alt_ok())
@@ -201,7 +206,6 @@ void Copter::RYA_TT_run()
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->update_z_controller();
         
-        cliSerial->printf("%f %f \n",curr_roll,curr_pitch);
         if (curr_roll >= 0.79 || curr_pitch >= 0.79|| curr_roll <= -0.79 || curr_pitch <= -0.79){
             time ++;
             cliSerial->printf("%d \n",time);
@@ -240,6 +244,8 @@ bool server_init(void){
 bool decode(char* msg, int& errX, int& errY){
     if (msg[0] == '0')
     {
+        errX = 0;
+        eryY = 0;
         return false;
     }
     else{
