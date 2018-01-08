@@ -15,11 +15,8 @@ int server_socket;
 int client_socket;
 char client_mess[256];
 
-int str_to_int(char *str);
-int four_char_to_int(char *mess);
-
 bool server_init(void);
-bool obj_position_in_pixel(int &X_err_in_pixel, int &Y_err_in_pixel, char *str);
+bool decode(char *msg, int &errX, int &errY);
 
 /*
  * Init and run calls for althold, flight mode
@@ -49,27 +46,34 @@ bool Copter::RYA_TT_init(bool ignore_checks)
     return true;
 }
 
+int time = 0;
+float pixel_per_cm = 0;
+float X_err_in_cm = 0;
+float Y_err_in_cm = 0;
+
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
     // Get required information
     
-    int X_err_in_pixel, Y_err_in_pixel;
+    int X_err_in_pixel = 0, Y_err_in_pixel = 0;
     int height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
     float curr_height = (float)height;  // cm
-    // float curr_roll = ahrs.roll;        // rad
-    // float curr_pitch = ahrs.pitch;      // rad
+    float curr_roll = ahrs.roll;        // rad
+    float curr_pitch = ahrs.pitch;      // rad
 
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
-    bool isThereaAnyObject = obj_position_in_pixel(X_err_in_pixel, Y_err_in_pixel, client_mess);
+    bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
+
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
     cliSerial->printf("client mess: %s \n",client_mess);
+    cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
     // Process information
     if (isThereaAnyObject){
-        float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
-        float X_err_in_cm = X_err_in_pixel * pixel_per_cm;
-        float Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
+        pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+        X_err_in_cm = X_err_in_pixel * pixel_per_cm;
+        Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
         cliSerial->printf("%f %f\n", X_err_in_cm, Y_err_in_cm);
     }
     else
@@ -196,8 +200,19 @@ void Copter::RYA_TT_run()
         // call position controller
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->update_z_controller();
+        
+        cliSerial->printf("%f %f \n",curr_roll,curr_pitch);
+        if (curr_roll >= 0.79 || curr_pitch >= 0.79|| curr_roll <= -0.79 || curr_pitch <= -0.79){
+            time ++;
+            cliSerial->printf("%d \n",time);
+            if(time>=300){
+                motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
+                init_disarm_motors();
+            }
+        }
+        else
+            time = 0;
         break;
-    
     }
 }
 
@@ -221,66 +236,26 @@ bool server_init(void){
     }
     return true;
 }
-bool obj_position_in_pixel(int &X_err_in_pixel, int &Y_err_in_pixel, char *str){
-    char client_mess_x[5] = {0, 0, 0, 0, 0};
-    char client_mess_y[5] = {0, 0, 0, 0, 0};
-    int i = 0;
-    for(i=0;i<=3;i++){
-        client_mess_x[i] = str[i];
-    }
-    for(i=4;i<=7;i++){
-        client_mess_y[i-4] = str[i];
-    }
-    X_err_in_pixel = four_char_to_int(client_mess_x);
-    Y_err_in_pixel = four_char_to_int(client_mess_y);
-    bool _isThereaAnyObject = false;
-    if(str[8] == '1') _isThereaAnyObject = true;
-    return _isThereaAnyObject;
-}
-int four_char_to_int(char *mess){
 
-    int i = 0, j = 0, flag = 0;
-    int err = 0;
-    while (i <= 3)
+bool decode(char* msg, int& errX, int& errY){
+    if (msg[0] == '0')
     {
-        if (mess[i] == '-')
-        {
-            flag = 1;
-            break;
-        }
-        i++;
+        return false;
     }
+    else{
+        errX = 0;
+        errX += (int)(msg[2] - 48) * 100;
+        errX += (int)(msg[3] - 48) * 10;
+        errX += (int)(msg[4] - 48);
+        if (msg[1] == '1') errX = - errX;
 
-    char str[4] = {0, 0, 0, 0};
-
-    if (flag == 0)
-    {
-        for (j = 0; j <= 2; j++)
-        {
-            str[j] = mess[j + 1];
-        }
-        err = str_to_int(str);
+        errY = 0;
+        errY += (int)(msg[6] - 48) * 100;
+        errY += (int)(msg[7] - 48) * 10;
+        errY += (int)(msg[8] - 48);
+        if (msg[5] == '1')errY = - errY;
+        
+        return true;
     }
-    else
-    {
-        for (j = 0; j < 4 - i - 1; j++)
-        {
-            str[j] = mess[j + i + 1];
-        }
-        err = -str_to_int(str);
-    }
-    return err;
 }
-int str_to_int(char * str) {
 
-    int num = 0;
-    int i = 0;
-
-    while (str[i] != 0) { // loop till there's nothing left
-        char digit = str[i] - 48;
-        num = 10 * num + digit; // "right shift" the number
-        i++;
-    }
-
-    return num;
-}

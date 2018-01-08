@@ -34,6 +34,8 @@ bool Copter::land_init(bool ignore_checks)
     // reset flag indicating if pilot has applied roll or pitch inputs during landing
     ap.land_repo_active = false;
 
+    init_disarm_motors();
+    
     return true;
 }
 
