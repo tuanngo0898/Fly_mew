@@ -62,6 +62,19 @@ void Copter::RYA_TT_run()
     float curr_roll = ahrs.roll;        // rad
     float curr_pitch = ahrs.pitch;      // rad
 
+    if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79)
+    {
+        time++;
+        cliSerial->printf("%d \n", time);
+        if (time >= 300)
+        {
+            motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
+            init_disarm_motors();
+        }
+    }
+    else
+        time = 0;
+
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
     bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
@@ -71,14 +84,14 @@ void Copter::RYA_TT_run()
     // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
 
     // Process information
-    if (isThereaAnyObject){
+    // if (isThereaAnyObject){
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         X_err_in_cm = X_err_in_pixel * pixel_per_cm;
         Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
-        cliSerial->printf("%f %f\n", X_err_in_cm, Y_err_in_cm);
-    }
-    else
-        cliSerial->printf("no object \n");
+        // cliSerial->printf("Error in cm: %f %f\n", X_err_in_cm, Y_err_in_cm);
+    // }
+    // else
+        // cliSerial->printf("no object \n");
 
     // Use information
     AltHoldModeState althold_state;
@@ -93,7 +106,19 @@ void Copter::RYA_TT_run()
 
     // get pilot desired lean angles
     float target_roll, target_pitch;
-    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+
+    // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
+    
+    target_roll = X_err_in_cm*5;
+    if(target_roll > 5000) target_roll = 5000;
+    if (target_roll < -5000) target_roll = -5000;
+    
+    target_pitch = -Y_err_in_cm*5;
+    if (target_pitch > 5000) target_pitch = 5000;
+    if (target_pitch < -5000) target_pitch = -5000;
+    
+    // cliSerial->printf("target_roll_pitch_auto: %f %f\n", target_roll, target_pitch);
 
     // get pilot's desired yaw rate
     float target_yaw_rate = get_pilot_desired_yaw_rate(channel_yaw->get_control_in());
@@ -186,10 +211,10 @@ void Copter::RYA_TT_run()
         motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
         // call attitude controller
-        target_roll = (int)X_err_in_cm*5;
-        target_pitch = -(int)Y_err_in_cm*5;
+        // target_roll = (int)X_err_in_cm;
+        // target_pitch = -(int)Y_err_in_cm;
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
-        cliSerial->printf("target_roll target_pitch: %f %f \n", target_roll, target_pitch);
+        // cliSerial->printf("target_roll target_pitch: %f %f \n", target_roll, target_pitch);
         // cliSerial->printf("roll pitch: %f %f \n", target_roll, target_pitch);
 
         // adjust climb rate using rangefinder
@@ -205,17 +230,6 @@ void Copter::RYA_TT_run()
         // call position controller
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->update_z_controller();
-        
-        if (curr_roll >= 0.79 || curr_pitch >= 0.79|| curr_roll <= -0.79 || curr_pitch <= -0.79){
-            time ++;
-            cliSerial->printf("%d \n",time);
-            if(time>=300){
-                motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
-                init_disarm_motors();
-            }
-        }
-        else
-            time = 0;
         break;
     }
 }
@@ -245,7 +259,7 @@ bool decode(char* msg, int& errX, int& errY){
     if (msg[0] == '0')
     {
         errX = 0;
-        eryY = 0;
+        errY = 0;
         return false;
     }
     else{

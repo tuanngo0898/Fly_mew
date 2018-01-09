@@ -8,6 +8,8 @@ static bool land_pause;
 // land_init - initialise land controller
 bool Copter::land_init(bool ignore_checks)
 {
+    motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
+    init_disarm_motors();
     // check if we have GPS and decide which LAND we're going to do
     land_with_gps = position_ok();
     if (land_with_gps) {
@@ -33,8 +35,6 @@ bool Copter::land_init(bool ignore_checks)
 
     // reset flag indicating if pilot has applied roll or pitch inputs during landing
     ap.land_repo_active = false;
-
-    init_disarm_motors();
     
     return true;
 }
