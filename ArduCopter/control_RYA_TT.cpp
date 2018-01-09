@@ -13,7 +13,7 @@
 
 int server_socket;
 int client_socket;
-char client_mess[256];
+char client_mess[10] = {};
 
 bool server_init(void);
 bool decode(char *msg, int &errX, int &errY);
@@ -25,7 +25,6 @@ bool decode(char *msg, int &errX, int &errY);
 // althold_init - initialise althold controller
 bool Copter::RYA_TT_init(bool ignore_checks)
 {
-    memset(client_mess, 0, sizeof(client_mess));
     // init server TCP_IP: 127.0.0.1, port: 9000
     server_init();
 
@@ -51,33 +50,41 @@ float pixel_per_cm = 0;
 float X_err_in_cm = 0;
 float Y_err_in_cm = 0;
 
+#define MAX_ANGLE  3500
+#define KP         30
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
-    // Get required information
-    
-    int X_err_in_pixel = 0, Y_err_in_pixel = 0;
-    int height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
+    // Get current information
+    int   height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
     float curr_height = (float)height;  // cm
     float curr_roll = ahrs.roll;        // rad
     float curr_pitch = ahrs.pitch;      // rad
 
-    if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79)
-    {
+    if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
         time++;
-        cliSerial->printf("%d \n", time);
+        // cliSerial->printf("%d \n", time);
         if (time >= 300)
         {
             motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
             init_disarm_motors();
         }
     }
-    else
-        time = 0;
+    else time = 0;
 
+    int X_err_in_pixel = 0, Y_err_in_pixel = 0;
+    client_mess[0] = {0};
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
     bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
+
+    if(isThereaAnyObject){
+        cliSerial->printf("%d,%d \n", X_err_in_pixel, Y_err_in_pixel);
+    }
+    // else
+    //     cliSerial->printf("No Obj");
+
+    decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
 
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
     // cliSerial->printf("client mess: %s \n",client_mess);
@@ -106,18 +113,22 @@ void Copter::RYA_TT_run()
 
     // get pilot desired lean angles
     float target_roll, target_pitch;
-    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
 
-    // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
+    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
     
-    target_roll = X_err_in_cm*5;
-    if(target_roll > 5000) target_roll = 5000;
-    if (target_roll < -5000) target_roll = -5000;
-    
-    target_pitch = -Y_err_in_cm*5;
-    if (target_pitch > 5000) target_pitch = 5000;
-    if (target_pitch < -5000) target_pitch = -5000;
-    
+    target_roll = X_err_in_cm * KP;
+    if (target_roll > MAX_ANGLE)
+        target_roll = MAX_ANGLE;
+    if (target_roll < -MAX_ANGLE)
+        target_roll = -MAX_ANGLE;
+
+    target_pitch = -Y_err_in_cm * KP;
+    if (target_pitch > MAX_ANGLE)
+        target_pitch = MAX_ANGLE;
+    if (target_pitch < -MAX_ANGLE)
+        target_pitch = -MAX_ANGLE;
+
     // cliSerial->printf("target_roll_pitch_auto: %f %f\n", target_roll, target_pitch);
 
     // get pilot's desired yaw rate
@@ -210,12 +221,15 @@ void Copter::RYA_TT_run()
 
         motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
+#if AC_AVOID_ENABLED == ENABLED
+        // apply avoidance
+        avoid.adjust_roll_pitch(target_roll, target_pitch, aparm.angle_max);
+#endif
         // call attitude controller
         // target_roll = (int)X_err_in_cm;
         // target_pitch = -(int)Y_err_in_cm;
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
         // cliSerial->printf("target_roll target_pitch: %f %f \n", target_roll, target_pitch);
-        // cliSerial->printf("roll pitch: %f %f \n", target_roll, target_pitch);
 
         // adjust climb rate using rangefinder
         if (rangefinder_alt_ok())
@@ -232,6 +246,7 @@ void Copter::RYA_TT_run()
         pos_control->update_z_controller();
         break;
     }
+    cliSerial->printf("target_roll_pitch: %f %f \n", target_roll, target_pitch);
 }
 
 bool server_init(void){
@@ -278,4 +293,3 @@ bool decode(char* msg, int& errX, int& errY){
         return true;
     }
 }
-
