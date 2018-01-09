@@ -50,7 +50,8 @@ float pixel_per_cm = 0;
 float X_err_in_cm = 0;
 float Y_err_in_cm = 0;
 
-#define MAX_ANGLE  3500
+#define MAX_CONTROL_ANGLE  3500
+#define MAX_ANGEL          0.0872664626
 #define KP         30
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
@@ -60,6 +61,7 @@ void Copter::RYA_TT_run()
     float curr_height = (float)height;  // cm
     float curr_roll = ahrs.roll;        // rad
     float curr_pitch = ahrs.pitch;      // rad
+    float target_roll, target_pitch;
 
     if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
         time++;
@@ -78,12 +80,6 @@ void Copter::RYA_TT_run()
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
     bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
 
-    if(isThereaAnyObject){
-        cliSerial->printf("%d,%d \n", X_err_in_pixel, Y_err_in_pixel);
-    }
-    // else
-    //     cliSerial->printf("No Obj");
-
     decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
 
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
@@ -92,13 +88,27 @@ void Copter::RYA_TT_run()
 
     // Process information
     // if (isThereaAnyObject){
+    if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL ){
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         X_err_in_cm = X_err_in_pixel * pixel_per_cm;
         Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
-        // cliSerial->printf("Error in cm: %f %f\n", X_err_in_cm, Y_err_in_cm);
-    // }
-    // else
-        // cliSerial->printf("no object \n");
+
+        target_roll = X_err_in_cm * KP;
+        if (target_roll > MAX_CONTROL_ANGLE)
+            target_roll = MAX_CONTROL_ANGLE;
+        if (target_roll < -MAX_CONTROL_ANGLE)
+            target_roll = -MAX_CONTROL_ANGLE;
+
+        target_pitch = -Y_err_in_cm * KP;
+        if (target_pitch > MAX_CONTROL_ANGLE)
+            target_pitch = MAX_CONTROL_ANGLE;
+        if (target_pitch < -MAX_CONTROL_ANGLE)
+            target_pitch = -MAX_CONTROL_ANGLE;
+    }
+    else{
+        target_roll = 0;
+        target_pitch = 0;
+    }
 
     // Use information
     AltHoldModeState althold_state;
@@ -112,22 +122,11 @@ void Copter::RYA_TT_run()
     update_simple_mode();
 
     // get pilot desired lean angles
-    float target_roll, target_pitch;
 
-    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-    cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
-    
-    target_roll = X_err_in_cm * KP;
-    if (target_roll > MAX_ANGLE)
-        target_roll = MAX_ANGLE;
-    if (target_roll < -MAX_ANGLE)
-        target_roll = -MAX_ANGLE;
 
-    target_pitch = -Y_err_in_cm * KP;
-    if (target_pitch > MAX_ANGLE)
-        target_pitch = MAX_ANGLE;
-    if (target_pitch < -MAX_ANGLE)
-        target_pitch = -MAX_ANGLE;
+//  get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+// cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
+
 
     // cliSerial->printf("target_roll_pitch_auto: %f %f\n", target_roll, target_pitch);
 
