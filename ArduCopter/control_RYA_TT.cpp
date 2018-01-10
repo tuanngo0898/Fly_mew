@@ -112,7 +112,7 @@ void Copter::RYA_TT_run()
         target_pitch = 0;
     }
 
-    cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+    //cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
 
     // Use information
     AltHoldModeState althold_state;
