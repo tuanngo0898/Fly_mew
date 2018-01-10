@@ -61,7 +61,11 @@ void Copter::RYA_TT_run()
     float curr_height = (float)height;  // cm
     float curr_roll = ahrs.roll;        // rad
     float curr_pitch = ahrs.pitch;      // rad
+
     float target_roll, target_pitch;
+    // get pilot desired lean angles
+    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
 
     if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
         time++;
@@ -75,7 +79,6 @@ void Copter::RYA_TT_run()
     else time = 0;
 
     int X_err_in_pixel = 0, Y_err_in_pixel = 0;
-    client_mess[0] = {0};
     client_socket = accept(server_socket, NULL, NULL);
     recv(client_socket, &client_mess, sizeof(client_mess), 0);
     bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
@@ -87,7 +90,6 @@ void Copter::RYA_TT_run()
     // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
 
     // Process information
-    // if (isThereaAnyObject){
     if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL ){
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         X_err_in_cm = X_err_in_pixel * pixel_per_cm;
@@ -110,6 +112,8 @@ void Copter::RYA_TT_run()
         target_pitch = 0;
     }
 
+    cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+
     // Use information
     AltHoldModeState althold_state;
     float takeoff_climb_rate = 0.0f;
@@ -122,13 +126,8 @@ void Copter::RYA_TT_run()
     update_simple_mode();
 
     // get pilot desired lean angles
-
-
-//  get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-// cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
-
-
-    // cliSerial->printf("target_roll_pitch_auto: %f %f\n", target_roll, target_pitch);
+    // float target_roll, target_pitch;
+    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
 
     // get pilot's desired yaw rate
     float target_yaw_rate = get_pilot_desired_yaw_rate(channel_yaw->get_control_in());
@@ -137,39 +136,51 @@ void Copter::RYA_TT_run()
     float target_climb_rate = get_pilot_desired_climb_rate(channel_throttle->get_control_in());
     target_climb_rate = constrain_float(target_climb_rate, -g.pilot_velocity_z_max, g.pilot_velocity_z_max);
 
+#if FRAME_CONFIG == HELI_FRAME
+    // helicopters are held on the ground until rotor speed runup has finished
+    bool takeoff_triggered = (ap.land_complete && (target_climb_rate > 0.0f) && motors->rotor_runup_complete());
+#else
     bool takeoff_triggered = ap.land_complete && (target_climb_rate > 0.0f);
+#endif
 
     // Alt Hold State Machine Determination
-    if (!motors->armed() || !motors->get_interlock()){
+    if (!motors->armed() || !motors->get_interlock())
+    {
         althold_state = AltHold_MotorStopped;
     }
-    else if (takeoff_state.running || takeoff_triggered){
+    else if (takeoff_state.running || takeoff_triggered)
+    {
         althold_state = AltHold_Takeoff;
     }
-    else if (!ap.auto_armed || ap.land_complete){
+    else if (!ap.auto_armed || ap.land_complete)
+    {
         althold_state = AltHold_Landed;
     }
-    else{
+    else
+    {
         althold_state = AltHold_Flying;
     }
 
     // Alt Hold State Machine
     switch (althold_state)
     {
+
     case AltHold_MotorStopped:
 
         motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
-
+#if FRAME_CONFIG == HELI_FRAME
+        // force descent rate and call position controller
+        pos_control->set_alt_target_from_climb_rate(-abs(g.land_speed), G_Dt, false);
+#else
         attitude_control->reset_rate_controller_I_terms();
         attitude_control->set_yaw_target_to_current_heading();
         pos_control->relax_alt_hold_controllers(0.0f); // forces throttle output to go to zero
-
+#endif
         pos_control->update_z_controller();
         break;
 
     case AltHold_Takeoff:
-
         // set motors to full range
         motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
@@ -191,7 +202,7 @@ void Copter::RYA_TT_run()
 
         // call attitude controller
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
-        
+
         // call position controller
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->add_takeoff_climb_rate(takeoff_climb_rate, G_Dt);
@@ -217,18 +228,15 @@ void Copter::RYA_TT_run()
         break;
 
     case AltHold_Flying:
-
         motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
 #if AC_AVOID_ENABLED == ENABLED
         // apply avoidance
         avoid.adjust_roll_pitch(target_roll, target_pitch, aparm.angle_max);
 #endif
+
         // call attitude controller
-        // target_roll = (int)X_err_in_cm;
-        // target_pitch = -(int)Y_err_in_cm;
         attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
-        // cliSerial->printf("target_roll target_pitch: %f %f \n", target_roll, target_pitch);
 
         // adjust climb rate using rangefinder
         if (rangefinder_alt_ok())
@@ -245,7 +253,6 @@ void Copter::RYA_TT_run()
         pos_control->update_z_controller();
         break;
     }
-    cliSerial->printf("target_roll_pitch: %f %f \n", target_roll, target_pitch);
 }
 
 bool server_init(void){
