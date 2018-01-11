@@ -8,7 +8,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <fcntl.h>
-
+#include <math.h>
 #include "Copter.h"
 
 int server_socket;
@@ -53,6 +53,7 @@ float Y_err_in_cm = 0;
 #define MAX_CONTROL_ANGLE  133          // =1000/45*6 ___ 6o
 #define MAX_ANGEL          0.0872664626 // 10o
 #define KP         2
+#define F_COEFFICENT 500
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
@@ -88,9 +89,15 @@ void Copter::RYA_TT_run()
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
     // cliSerial->printf("client mess: %s \n",client_mess);
     // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
-    cliSerial->printf("high_roll_pitch_X_Y %f %f %f %d %d \n", curr_height, curr_roll, curr_pitch, X_err_in_pixel, Y_err_in_pixel);
+    // cliSerial->printf("high_roll_pitch_X_Y %f %f %f %d %d \n", curr_height, curr_roll, curr_pitch, X_err_in_pixel, Y_err_in_pixel);
+    float X_dis_cm = curr_height * (1 + tan(3.14159 / 2 - curr_roll) * X_err_in_pixel / F_COEFFICENT) / (tan(3.14159 / 2 - curr_roll) - X_err_in_pixel / F_COEFFICENT);
+    if(isThereaAnyObject){
+        cliSerial->printf("errX_cm %f \n", X_dis_cm);
+    }
+
     // Process information
-    if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL ){
+    if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll > -MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL)
+    {
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         X_err_in_cm = X_err_in_pixel * pixel_per_cm;
         Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
