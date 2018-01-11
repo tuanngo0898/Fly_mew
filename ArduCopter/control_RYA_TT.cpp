@@ -13,7 +13,7 @@
 
 int server_socket;
 int client_socket;
-char client_mess[10] = {};
+char client_mess[10];
 
 bool server_init(void);
 bool decode(char *msg, int &errX, int &errY);
@@ -50,9 +50,9 @@ float pixel_per_cm = 0;
 float X_err_in_cm = 0;
 float Y_err_in_cm = 0;
 
-#define MAX_CONTROL_ANGLE  3500
-#define MAX_ANGEL          0.0872664626
-#define KP         30
+#define MAX_CONTROL_ANGLE  133          // =1000/45*6 ___ 6o
+#define MAX_ANGEL          0.0872664626 // 10o
+#define KP         2
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
@@ -64,8 +64,8 @@ void Copter::RYA_TT_run()
 
     float target_roll, target_pitch;
     // get pilot desired lean angles
-    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-    cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
+    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
 
     if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
         time++;
@@ -88,7 +88,7 @@ void Copter::RYA_TT_run()
     // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
     // cliSerial->printf("client mess: %s \n",client_mess);
     // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
-
+    cliSerial->printf("high_roll_pitch_X_Y %f %f %f %d %d \n", curr_height, curr_roll, curr_pitch, X_err_in_pixel, Y_err_in_pixel);
     // Process information
     if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL ){
         pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
@@ -112,7 +112,7 @@ void Copter::RYA_TT_run()
         target_pitch = 0;
     }
 
-    //cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+    // cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
 
     // Use information
     AltHoldModeState althold_state;
