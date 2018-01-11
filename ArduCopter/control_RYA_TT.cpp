@@ -50,9 +50,9 @@ float pixel_per_cm = 0;
 float X_err_in_cm = 0;
 float Y_err_in_cm = 0;
 
-#define MAX_CONTROL_ANGLE  133          // =1000/45*6 ___ 6o
-#define MAX_ANGEL          0.0872664626 // 10o
-#define KP         2
+#define MAX_CONTROL_ANGLE  500          // =1000/45*6 ___ 6o
+#define MAX_ANGEL          0.18         // 10o
+#define KP                  10
 #define F_COEFFICENT 500
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
@@ -90,10 +90,10 @@ void Copter::RYA_TT_run()
     // cliSerial->printf("client mess: %s \n",client_mess);
     // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
     // cliSerial->printf("high_roll_pitch_X_Y %f %f %f %d %d \n", curr_height, curr_roll, curr_pitch, X_err_in_pixel, Y_err_in_pixel);
-    float X_dis_cm = curr_height * (1 + tan(3.14159 / 2 - curr_roll) * X_err_in_pixel / F_COEFFICENT) / (tan(3.14159 / 2 - curr_roll) - X_err_in_pixel / F_COEFFICENT);
-    if(isThereaAnyObject){
-        cliSerial->printf("errX_cm %f \n", X_dis_cm);
-    }
+    // float X_dis_cm = curr_height * (1 + tan(3.14159 / 2 - curr_roll) * X_err_in_pixel / F_COEFFICENT) / (tan(3.14159 / 2 - curr_roll) - X_err_in_pixel / F_COEFFICENT);
+    // if(isThereaAnyObject){
+    //     cliSerial->printf("errX_cm %f \n", X_dis_cm);
+    // }
 
     // Process information
     if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll > -MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL)
@@ -119,7 +119,7 @@ void Copter::RYA_TT_run()
         target_pitch = 0;
     }
 
-    // cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+    cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
 
     // Use information
     AltHoldModeState althold_state;
