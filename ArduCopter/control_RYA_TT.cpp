@@ -52,7 +52,7 @@ float Y_err_in_cm = 0;
 
 #define MAX_CONTROL_ANGLE  500          // =1000/45*6 ___ 6o
 #define MAX_ANGEL          0.18         // 10o
-#define KP                  10
+
 #define F_COEFFICENT 500
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
@@ -102,13 +102,13 @@ void Copter::RYA_TT_run()
         X_err_in_cm = X_err_in_pixel * pixel_per_cm;
         Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
 
-        target_roll = X_err_in_cm * KP;
+        target_roll = X_err_in_cm * g.RYA_PID_P;
         if (target_roll > MAX_CONTROL_ANGLE)
             target_roll = MAX_CONTROL_ANGLE;
         if (target_roll < -MAX_CONTROL_ANGLE)
             target_roll = -MAX_CONTROL_ANGLE;
 
-        target_pitch = -Y_err_in_cm * KP;
+        target_pitch = -Y_err_in_cm * g.RYA_PID_P;
         if (target_pitch > MAX_CONTROL_ANGLE)
             target_pitch = MAX_CONTROL_ANGLE;
         if (target_pitch < -MAX_CONTROL_ANGLE)
