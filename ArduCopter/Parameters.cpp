@@ -35,7 +35,21 @@ const AP_Param::Info Copter::var_info[] = {
     // @Description: A description of my new parameter goes here
     // @Range: -32768 32767
     // @User: Advanced
-    GSCALAR(my_new_parameter, "MY_NEW_PARAMETER", MY_NEW_PARAMETER_DEFAULT),
+    GSCALAR(RYA_PID_P, "MY_NEW_PARAMETER", RYA_PID_P_DEFAULT),
+
+    // @Param: MY_NEW_PARAMETER
+    // @DisplayName: My New Parameter
+    // @Description: A description of my new parameter goes here
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(RYA_PID_I, "MY_NEW_PARAMETER", RYA_PID_I_DEFAULT),
+
+    // @Param: MY_NEW_PARAMETER
+    // @DisplayName: My New Parameter
+    // @Description: A description of my new parameter goes here
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(RYA_PID_D, "MY_NEW_PARAMETER", RYA_PID_D_DEFAULT),
 
     // @Param: SYSID_SW_MREV
     // @DisplayName: Eeprom format version number
