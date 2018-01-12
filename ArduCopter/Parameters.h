@@ -44,13 +44,14 @@ public:
     //			variables saved in EEPROM.
     //
     //
-    enum {
+    enum
+    {
         // Layout version number, always key zero.
         //
         k_param_format_version = 0,
         k_param_software_type,
-        k_param_ins_old,                        // *** Deprecated, remove with next eeprom number change
-        k_param_ins,                            // libraries/AP_InertialSensor variables
+        k_param_ins_old,     // *** Deprecated, remove with next eeprom number change
+        k_param_ins,         // libraries/AP_InertialSensor variables
         k_param_NavEKF2_old, // deprecated - remove
         k_param_NavEKF2,
         k_param_g2, // 2nd block of parameters
@@ -81,47 +82,47 @@ public:
         k_param_parachute,
 
         // Landing gear object
-        k_param_landinggear,    // 18
+        k_param_landinggear, // 18
 
         // Input Management object
-        k_param_input_manager,  // 19
+        k_param_input_manager, // 19
 
         // Misc
         //
-        k_param_log_bitmask_old = 20,           // Deprecated
-        k_param_log_last_filenumber,            // *** Deprecated - remove
-                                                // with next eeprom number
-                                                // change
-        k_param_toy_yaw_rate,                   // deprecated - remove
-        k_param_crosstrack_min_distance,	// deprecated - remove with next eeprom number change
-        k_param_rssi_pin,                   // unused, replaced by rssi_ library parameters
-        k_param_throttle_accel_enabled,     // deprecated - remove
+        k_param_log_bitmask_old = 20,    // Deprecated
+        k_param_log_last_filenumber,     // *** Deprecated - remove
+                                         // with next eeprom number
+                                         // change
+        k_param_toy_yaw_rate,            // deprecated - remove
+        k_param_crosstrack_min_distance, // deprecated - remove with next eeprom number change
+        k_param_rssi_pin,                // unused, replaced by rssi_ library parameters
+        k_param_throttle_accel_enabled,  // deprecated - remove
         k_param_wp_yaw_behavior,
         k_param_acro_trainer,
         k_param_pilot_velocity_z_max,
-        k_param_circle_rate,                // deprecated - remove
+        k_param_circle_rate, // deprecated - remove
         k_param_rangefinder_gain,
         k_param_ch8_option,
-        k_param_arming_check_old,       // deprecated - remove
+        k_param_arming_check_old, // deprecated - remove
         k_param_sprayer,
         k_param_angle_max,
         k_param_gps_hdop_good,
         k_param_battery,
         k_param_fs_batt_mah,
-        k_param_angle_rate_max,         // remove
-        k_param_rssi_range,             // unused, replaced by rssi_ library parameters
+        k_param_angle_rate_max, // remove
+        k_param_rssi_range,     // unused, replaced by rssi_ library parameters
         k_param_rc_feel_rp,
-        k_param_NavEKF,                 // deprecated - remove
-        k_param_mission,                // mission library
+        k_param_NavEKF,  // deprecated - remove
+        k_param_mission, // mission library
         k_param_rc_13_old,
         k_param_rc_14_old,
         k_param_rally,
         k_param_poshold_brake_rate,
         k_param_poshold_brake_angle_max,
         k_param_pilot_accel_z,
-        k_param_serial0_baud,           // deprecated - remove
-        k_param_serial1_baud,           // deprecated - remove
-        k_param_serial2_baud,           // deprecated - remove
+        k_param_serial0_baud, // deprecated - remove
+        k_param_serial1_baud, // deprecated - remove
+        k_param_serial2_baud, // deprecated - remove
         k_param_land_repositioning,
         k_param_rangefinder, // rangefinder object
         k_param_fs_ekf_thresh,
@@ -129,7 +130,7 @@ public:
         k_param_acro_rp_expo,
         k_param_throttle_deadzone,
         k_param_optflow,
-        k_param_dcmcheck_thresh,        // deprecated - remove
+        k_param_dcmcheck_thresh, // deprecated - remove
         k_param_log_bitmask,
         k_param_cli_enabled,
         k_param_throttle_filt,
@@ -137,17 +138,17 @@ public:
         k_param_pilot_takeoff_alt, // 64
 
         // 65: AP_Limits Library
-        k_param_limits = 65,            // deprecated - remove
-        k_param_gpslock_limit,          // deprecated - remove
-        k_param_geofence_limit,         // deprecated - remove
-        k_param_altitude_limit,         // deprecated - remove
+        k_param_limits = 65,    // deprecated - remove
+        k_param_gpslock_limit,  // deprecated - remove
+        k_param_geofence_limit, // deprecated - remove
+        k_param_altitude_limit, // deprecated - remove
         k_param_fence,
-        k_param_gps_glitch,             // deprecated
-        k_param_baro_glitch,            // 71 - deprecated
+        k_param_gps_glitch,  // deprecated
+        k_param_baro_glitch, // 71 - deprecated
 
         // AP_ADSB Library
-        k_param_adsb,                   // 72
-        k_param_notify,                 // 73
+        k_param_adsb,   // 72
+        k_param_notify, // 73
 
         // 74: precision landing object
         k_param_precland = 74,
@@ -155,24 +156,24 @@ public:
         //
         // 75: Singlecopter, CoaxCopter
         //
-        k_param_single_servo_1 = 75,    // remove
-        k_param_single_servo_2,         // remove
-        k_param_single_servo_3,         // remove
-        k_param_single_servo_4,         // 78 - remove
+        k_param_single_servo_1 = 75, // remove
+        k_param_single_servo_2,      // remove
+        k_param_single_servo_3,      // remove
+        k_param_single_servo_4,      // 78 - remove
 
         //
         // 80: Heli
         //
-        k_param_heli_servo_1 = 80,  // remove
-        k_param_heli_servo_2,       // remove
-        k_param_heli_servo_3,       // remove
-        k_param_heli_servo_4,       // remove
-        k_param_heli_pitch_ff,      // remove
-        k_param_heli_roll_ff,       // remove
-        k_param_heli_yaw_ff,        // remove
-        k_param_heli_stab_col_min,  // remove
-        k_param_heli_stab_col_max,  // remove
-        k_param_heli_servo_rsc,     // 89 = full! - remove
+        k_param_heli_servo_1 = 80, // remove
+        k_param_heli_servo_2,      // remove
+        k_param_heli_servo_3,      // remove
+        k_param_heli_servo_4,      // remove
+        k_param_heli_pitch_ff,     // remove
+        k_param_heli_roll_ff,      // remove
+        k_param_heli_yaw_ff,       // remove
+        k_param_heli_stab_col_min, // remove
+        k_param_heli_stab_col_max, // remove
+        k_param_heli_servo_rsc,    // 89 = full! - remove
 
         //
         // 90: misc2
@@ -181,13 +182,13 @@ public:
         k_param_disarm_delay,
         k_param_fs_crash_check,
         k_param_throw_motor_start,
-        k_param_terrain_follow,    // 94
+        k_param_terrain_follow, // 94
         k_param_avoid,
         k_param_avoidance_adsb,
 
         // 97: RSSI
         k_param_rssi = 97,
-                
+
         //
         // 100: Inertial Nav
         //
@@ -195,7 +196,7 @@ public:
         k_param_wp_nav,
         k_param_attitude_control,
         k_param_pos_control,
-        k_param_circle_nav,     // 104
+        k_param_circle_nav, // 104
 
         // 110: Telemetry control
         //
@@ -215,7 +216,7 @@ public:
         k_param_ch12_option,
         k_param_takeoff_trigger_dz,
         k_param_gcs3,
-        k_param_gcs_pid_mask,    // 126
+        k_param_gcs_pid_mask, // 126
 
         //
         // 135 : reserved for Solo until features merged with master
@@ -227,48 +228,47 @@ public:
         //
         // 140: Sensor parameters
         //
-        k_param_imu = 140, // deprecated - can be deleted
-        k_param_battery_monitoring = 141,   // deprecated - can be deleted
-        k_param_volt_div_ratio, // deprecated - can be deleted
-        k_param_curr_amp_per_volt,  // deprecated - can be deleted
-        k_param_input_voltage,  // deprecated - can be deleted
-        k_param_pack_capacity,  // deprecated - can be deleted
+        k_param_imu = 140,                // deprecated - can be deleted
+        k_param_battery_monitoring = 141, // deprecated - can be deleted
+        k_param_volt_div_ratio,           // deprecated - can be deleted
+        k_param_curr_amp_per_volt,        // deprecated - can be deleted
+        k_param_input_voltage,            // deprecated - can be deleted
+        k_param_pack_capacity,            // deprecated - can be deleted
         k_param_compass_enabled,
         k_param_compass,
         k_param_rangefinder_enabled_old, // deprecated
         k_param_frame_type,
-        k_param_optflow_enabled,    // deprecated
+        k_param_optflow_enabled, // deprecated
         k_param_fs_batt_voltage,
         k_param_ch7_option,
-        k_param_auto_slew_rate,     // deprecated - can be deleted
-        k_param_rangefinder_type_old,     // deprecated
+        k_param_auto_slew_rate,       // deprecated - can be deleted
+        k_param_rangefinder_type_old, // deprecated
         k_param_super_simple = 155,
         k_param_axis_enabled = 157, // deprecated - remove with next eeprom number change
         k_param_copter_leds_mode,   // deprecated - remove with next eeprom number change
-        k_param_ahrs, // AHRS group // 159
+        k_param_ahrs,               // AHRS group // 159
 
         //
         // 160: Navigation parameters
         //
         k_param_rtl_altitude = 160,
-        k_param_crosstrack_gain,	// deprecated - remove with next eeprom number change
+        k_param_crosstrack_gain, // deprecated - remove with next eeprom number change
         k_param_rtl_loiter_time,
         k_param_rtl_alt_final,
-        k_param_tilt_comp, 	//164	deprecated - remove with next eeprom number change
-
+        k_param_tilt_comp, //164	deprecated - remove with next eeprom number change
 
         //
         // Camera and mount parameters
         //
         k_param_camera = 165,
         k_param_camera_mount,
-        k_param_camera_mount2,      // deprecated
+        k_param_camera_mount2, // deprecated
 
         //
         // Batery monitoring parameters
         //
         k_param_battery_volt_pin = 168, // deprecated - can be deleted
-        k_param_battery_curr_pin,   // 169 deprecated - can be deleted
+        k_param_battery_curr_pin,       // 169 deprecated - can be deleted
 
         //
         // 170: Radio settings
@@ -283,20 +283,20 @@ public:
         k_param_rc_8_old,
         k_param_rc_10_old,
         k_param_rc_11_old,
-        k_param_throttle_min,           // remove
-        k_param_throttle_max,           // remove
+        k_param_throttle_min, // remove
+        k_param_throttle_max, // remove
         k_param_failsafe_throttle,
-        k_param_throttle_fs_action,     // remove
+        k_param_throttle_fs_action, // remove
         k_param_failsafe_throttle_value,
-        k_param_throttle_trim,          // remove
+        k_param_throttle_trim, // remove
         k_param_esc_calibrate,
         k_param_radio_tuning,
         k_param_radio_tuning_high,
         k_param_radio_tuning_low,
         k_param_rc_speed = 192,
         k_param_failsafe_battery_enabled,
-        k_param_throttle_mid,           // remove
-        k_param_failsafe_gps_enabled,   // remove
+        k_param_throttle_mid,         // remove
+        k_param_failsafe_gps_enabled, // remove
         k_param_rc_9_old,
         k_param_rc_12_old,
         k_param_failsafe_gcs,
@@ -332,19 +332,19 @@ public:
         // 220: PI/D Controllers
         //
         k_param_acro_rp_p = 221,
-        k_param_axis_lock_p,    // remove
-        k_param_pid_rate_roll,      // remove
-        k_param_pid_rate_pitch,     // remove
-        k_param_pid_rate_yaw,       // remove
-        k_param_p_stabilize_roll,   // remove
-        k_param_p_stabilize_pitch,  // remove
-        k_param_p_stabilize_yaw,    // remove
+        k_param_axis_lock_p,       // remove
+        k_param_pid_rate_roll,     // remove
+        k_param_pid_rate_pitch,    // remove
+        k_param_pid_rate_yaw,      // remove
+        k_param_p_stabilize_roll,  // remove
+        k_param_p_stabilize_pitch, // remove
+        k_param_p_stabilize_yaw,   // remove
         k_param_p_pos_xy,
-        k_param_p_loiter_lon,       // remove
-        k_param_pid_loiter_rate_lat,    // remove
-        k_param_pid_loiter_rate_lon,    // remove
-        k_param_pid_nav_lat,        // remove
-        k_param_pid_nav_lon,        // remove
+        k_param_p_loiter_lon,        // remove
+        k_param_pid_loiter_rate_lat, // remove
+        k_param_pid_loiter_rate_lon, // remove
+        k_param_pid_nav_lat,         // remove
+        k_param_pid_nav_lon,         // remove
         k_param_p_alt_hold,
         k_param_p_vel_z,
         k_param_pid_optflow_roll,       // remove
@@ -361,17 +361,24 @@ public:
         k_param_fs_ekf_action,
         k_param_rtl_climb_min,
         k_param_rpm_sensor,
-        k_param_autotune_min_d, // 251
-        k_param_arming, // 252  - AP_Arming
+        k_param_autotune_min_d,  // 251
+        k_param_arming,          // 252  - AP_Arming
         k_param_DataFlash = 253, // 253 - Logging Group
 
+        k_param_RYA_PID_P,
+        k_param_RYA_PID_I,
+        k_param_RYA_PID_D,
         // 254,255: reserved
 
         // the k_param_* space is 9-bits in size
         // 511: reserved
     };
 
-    AP_Int16        format_version;
+    AP_Float RYA_PID_P;
+    AP_Float RYA_PID_I;
+    AP_Float RYA_PID_D;
+
+        AP_Int16 format_version;
     AP_Int8         software_type;
 
     // Telemetry control
