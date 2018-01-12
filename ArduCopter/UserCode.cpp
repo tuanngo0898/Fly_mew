@@ -20,7 +20,8 @@ void Copter::userhook_init()
 void Copter::userhook_FastLoop()
 {
     // put your 100Hz code here
-    // uartF: serial5, baud 115200
+
+// uartF: serial5, baud 115200
 //================================IPS_POSITION====================================//
     // Get available bytes
     ips_bytes = hal.uartF->available();
