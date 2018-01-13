@@ -1,22 +1,4 @@
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <math.h>
 #include "Copter.h"
-
-int server_socket;
-int client_socket;
-char client_mess[10];
-
-bool server_init(void);
-bool decode(char *msg, int &errX, int &errY);
 
 /*
  * Init and run calls for althold, flight mode
@@ -25,8 +7,6 @@ bool decode(char *msg, int &errX, int &errY);
 // althold_init - initialise althold controller
 bool Copter::RYA_TT_init(bool ignore_checks)
 {
-    // init server TCP_IP: 127.0.0.1, port: 9000
-    server_init();
 
     // initialize vertical speeds and leash lengths
     pos_control->set_speed_z(-g.pilot_velocity_z_max, g.pilot_velocity_z_max);
@@ -45,15 +25,6 @@ bool Copter::RYA_TT_init(bool ignore_checks)
     return true;
 }
 
-int time = 0;
-float pixel_per_cm = 0;
-float X_err_in_cm = 0;
-float Y_err_in_cm = 0;
-
-#define MAX_CONTROL_ANGLE  500          // =1000/45*6 ___ 6o
-#define MAX_ANGEL          0.18         // 10o
-
-#define F_COEFFICENT 500
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
@@ -63,7 +34,7 @@ void Copter::RYA_TT_run()
     // float curr_roll = ahrs.roll;        // rad
     // float curr_pitch = ahrs.pitch;      // rad
 
-    // float target_roll, target_pitch;
+    
     // get pilot desired lean angles
     // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
     // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
@@ -120,7 +91,7 @@ void Copter::RYA_TT_run()
     //     target_pitch = 0;
     // }
 
-    // cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+    float target_roll, target_pitch;
 
     // Use information
     AltHoldModeState althold_state;
@@ -134,7 +105,6 @@ void Copter::RYA_TT_run()
     update_simple_mode();
 
     // get pilot desired lean angles
-    // float target_roll, target_pitch;
     // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
 
     // get pilot's desired yaw rate
@@ -260,50 +230,5 @@ void Copter::RYA_TT_run()
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
         pos_control->update_z_controller();
         break;
-    }
-}
-
-bool server_init(void){
-    if(server_socket == 0){
-        server_socket = socket(AF_INET, SOCK_STREAM,0);
-
-        //define the server address
-        struct sockaddr_in server_address;
-        server_address.sin_family = AF_INET;
-        server_address.sin_port = htons(9000);
-        // server_address.sin_addr.s_addr = inet_addr("127.0.0.1");
-        server_address.sin_addr.s_addr = INADDR_ANY;
-
-        //bind the socket to our specified IP and port
-        bind(server_socket, (struct sockaddr*) &server_address, sizeof(server_address));
-
-        listen(server_socket, 5);
-
-        fcntl(server_socket, F_SETFL, fcntl(server_socket, F_GETFL, 0) | O_NONBLOCK);
-    }
-    return true;
-}
-
-bool decode(char* msg, int& errX, int& errY){
-    if (msg[0] == '0')
-    {
-        errX = 0;
-        errY = 0;
-        return false;
-    }
-    else{
-        errX = 0;
-        errX += (int)(msg[2] - 48) * 100;
-        errX += (int)(msg[3] - 48) * 10;
-        errX += (int)(msg[4] - 48);
-        if (msg[1] == '1') errX = - errX;
-
-        errY = 0;
-        errY += (int)(msg[6] - 48) * 100;
-        errY += (int)(msg[7] - 48) * 10;
-        errY += (int)(msg[8] - 48);
-        if (msg[5] == '1')errY = - errY;
-        
-        return true;
     }
 }
