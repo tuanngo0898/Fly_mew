@@ -1,6 +1,5 @@
 #include "Copter.h"
 
-
 /*
  * Init and run calls for althold, flight mode
  */

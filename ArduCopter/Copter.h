@@ -93,6 +93,8 @@
 #include <AP_Arming/AP_Arming.h>
 #include <AP_VisualOdom/AP_VisualOdom.h>
 
+#include "pid.h"
+
 // Configuration
 #include "defines.h"
 #include "config.h"
@@ -131,6 +133,7 @@
 #include <SITL/SITL.h>
 #endif
 
+#include "pid.h"
 
 class Copter : public AP_HAL::HAL::Callbacks {
 public:
@@ -150,7 +153,10 @@ public:
     void setup() override;
     void loop() override;
 
-private:
+  private:
+
+    PID pid_roll;
+    PID pid_pitch;
     // key aircraft parameters passed to multiple libraries
     AP_Vehicle::MultiCopter aparm;
 
@@ -160,6 +166,7 @@ private:
     AP_HAL::BetterStream* cliSerial;
 
     // Global parameters are all contained within the 'g' class.
+
     Parameters g;
     ParametersG2 g2;
 
@@ -1172,6 +1179,31 @@ public:
     int8_t test_rangefinder(uint8_t argc, const Menu::arg *argv);
 
     int8_t reboot_board(uint8_t argc, const Menu::arg *argv);
+
+    typedef struct
+    {
+        float Kp;
+        float Ki;
+        float Kd;
+        float ppart;
+        float ipart;
+        float dpart;
+        float dpart_alpha;
+        float u;
+        float u_;
+        float e;
+        float e_;
+        float e__;
+        float Ts;
+        bool flag_first_time;
+        float PID_Saturation;
+        uint32_t time;
+    } PID_PARAMETERS;
+
+    float pid_process(float error, uint32_t time);
+    void pid_reset();
+    void pid_set_k_params(float Kp, float Ki, float Kd, float Ts, float PID_Saturation);
+    PID_PARAMETERS pid_param;
 };
 
 #define MENU_FUNC(func) FUNCTOR_BIND(&copter, &Copter::func, int8_t, uint8_t, const Menu::arg *)

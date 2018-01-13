@@ -656,7 +656,7 @@
 #endif
 
 #ifndef RYA_PID_I_DEFAULT
-#define RYA_PID_I_DEFAULT 10 // default value for RYA_PID_I_DEFAULT
+#define RYA_PID_I_DEFAULT 0 // default value for RYA_PID_I_DEFAULT
 #endif
 
 #ifndef RYA_PID_D_DEFAULT

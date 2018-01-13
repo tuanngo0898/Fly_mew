@@ -19,6 +19,9 @@ uint32_t opt_integration_timespan;
 
 uint16_t s16_US_HEIGHT;
 
+float target_roll_user;
+float target_pitch_user;
+
 #endif  // USERHOOK_VARIABLES
 
 
