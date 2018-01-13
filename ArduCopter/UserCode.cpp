@@ -34,6 +34,9 @@ void Copter::userhook_FastLoop()
     pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
     pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
 
+    // pid_roll.pid_set_k_params(1,0,1, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
+    // pid_pitch.pid_set_k_params(1,0,1, 0.01, 1000);
+
     // uartF: serial5, baud 115200
 //================================IPS_POSITION====================================//
     // Get available bytes
@@ -71,21 +74,27 @@ void Copter::userhook_FastLoop()
     // float curr_roll = ahrs.roll;       // rad
     // float curr_pitch = ahrs.pitch;     // rad
 
-    bool isThereaAnyObject = ips_data[0];
+    int isThereaAnyObject = ips_data[0];
+    // cliSerial->printf("isThereaAnyObject %d \n", isThereaAnyObject);
+    
     int X_err_in_pixel = ips_data[1] - 320;
-    int Y_err_in_pixel = 240 - ips_data[2] - 240;
+    int Y_err_in_pixel = ips_data[2] - 240;
+
+    // cliSerial->printf("px: %d %d \n", X_err_in_pixel, Y_err_in_pixel);
 
     // Process information
     if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
     {
         //buzzer.on(true);
         //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
-        int pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+        float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+        // cliSerial->printf("height: %f \n", curr_height);
         int X_err_in_cm = X_err_in_pixel * pixel_per_cm;
         int Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
+        // cliSerial->printf("sttt: %d %d \n", X_err_in_cm, Y_err_in_cm);
 
         target_roll_user = pid_roll.pid_process(X_err_in_cm, millis());
-        target_pitch_user = -pid_pitch.pid_process(Y_err_in_cm, millis());
+        target_pitch_user = pid_pitch.pid_process(Y_err_in_cm, millis());
     }
     else
     {
@@ -93,6 +102,7 @@ void Copter::userhook_FastLoop()
         target_roll_user = 0;
         target_pitch_user = 0;
     }
+    // cliSerial->printf("tg: %f %f \n", target_roll_user, target_pitch_user);
 }
 #endif
 

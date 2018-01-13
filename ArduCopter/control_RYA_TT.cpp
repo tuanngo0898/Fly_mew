@@ -28,71 +28,10 @@ bool Copter::RYA_TT_init(bool ignore_checks)
 // should be called at 100hz or more
 void Copter::RYA_TT_run()
 {
-    // Get current information
-    // int   height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
-    // float curr_height = (float)height;  // cm
-    // float curr_roll = ahrs.roll;        // rad
-    // float curr_pitch = ahrs.pitch;      // rad
-
-    
-    // get pilot desired lean angles
-    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-    // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
-    // cliSerial->printf("%d %d %d \n", ips_data[0], ips_data[1], ips_data[2]);
-
-    // if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
-    //     time++;
-    //     // cliSerial->printf("%d \n", time);
-    //     if (time >= 300)
-    //     {
-    //         motors->set_desired_spool_state(AP_Motors::DESIRED_SHUT_DOWN);
-    //         init_disarm_motors();
-    //     }
-    // }
-    // else time = 0;
-
-    // int X_err_in_pixel = 0, Y_err_in_pixel = 0;
-    // client_socket = accept(server_socket, NULL, NULL);
-    // recv(client_socket, &client_mess, sizeof(client_mess), 0);
-    // bool isThereaAnyObject = decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
-
-    // decode(client_mess, X_err_in_pixel, Y_err_in_pixel);
-
-    // cliSerial->printf("%f %f %f\n", curr_roll, curr_pitch, curr_height);
-    // cliSerial->printf("client mess: %s \n",client_mess);
-    // cliSerial->printf("err in pixel %d %d \n", X_err_in_pixel, Y_err_in_pixel);
-    // cliSerial->printf("high_roll_pitch_X_Y %f %f %f %d %d \n", curr_height, curr_roll, curr_pitch, X_err_in_pixel, Y_err_in_pixel);
-    // float X_dis_cm = curr_height * (1 + tan(3.14159 / 2 - curr_roll) * X_err_in_pixel / F_COEFFICENT) / (tan(3.14159 / 2 - curr_roll) - X_err_in_pixel / F_COEFFICENT);
-    // if(isThereaAnyObject){
-    //     cliSerial->printf("errX_cm %f \n", X_dis_cm);
-    // }
-    
-    // Process information
-    // if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll > -MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL)
-    // {
-    //     pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
-    //     X_err_in_cm = X_err_in_pixel * pixel_per_cm;
-    //     Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
-
-    //     target_roll = X_err_in_cm * g.RYA_PID_P;
-    //     if (target_roll > MAX_CONTROL_ANGLE)
-    //         target_roll = MAX_CONTROL_ANGLE;
-    //     if (target_roll < -MAX_CONTROL_ANGLE)
-    //         target_roll = -MAX_CONTROL_ANGLE;
-
-    //     target_pitch = -Y_err_in_cm * g.RYA_PID_P;
-    //     if (target_pitch > MAX_CONTROL_ANGLE)
-    //         target_pitch = MAX_CONTROL_ANGLE;
-    //     if (target_pitch < -MAX_CONTROL_ANGLE)
-    //         target_pitch = -MAX_CONTROL_ANGLE;
-    // }
-    // else{
-    //     target_roll = 0;
-    //     target_pitch = 0;
-    // }
-
     float target_roll, target_pitch;
-
+    target_roll = target_roll_user;
+    target_pitch = target_pitch_user;
+    
     // Use information
     AltHoldModeState althold_state;
     float takeoff_climb_rate = 0.0f;
@@ -231,4 +170,5 @@ void Copter::RYA_TT_run()
         pos_control->update_z_controller();
         break;
     }
+    cliSerial->printf("tg: %f %f \n", target_roll, target_pitch);
 }
