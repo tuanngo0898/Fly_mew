@@ -34,10 +34,11 @@ void Copter::userhook_FastLoop()
         }
         else if(ips_char[0] == 'e'){
             // end-of-frame: get ips_pos & time_stamp
-            if(ips_char[4] ==','){
+            if(ips_char[5] ==','){
                 // valid frame
-                ips_data[0] = (ips_char[1]-0x30)*100 + (ips_char[2]-0x30)*10 + (ips_char[3]-0x30); //pos_x
-                ips_data[1] = (ips_char[5]-0x30)*100 + (ips_char[6]-0x30)*10 + (ips_char[7]-0x30); //pos_y             
+                ips_data[0] = ips_char[1] - 0x30;
+                ips_data[1] = (ips_char[2]-0x30)*100 + (ips_char[3]-0x30)*10 + (ips_char[4]-0x30); //pos_x
+                ips_data[2] = (ips_char[6]-0x30)*100 + (ips_char[7]-0x30)*10 + (ips_char[8]-0x30); //pos_y
             }
             c_buff = 0;
             c_state = 0;

@@ -3,10 +3,10 @@
 // example variables used in Wii camera testing - replace with your own
 // variables
 #ifdef USERHOOK_VARIABLES
-#define BUFFER_FRAME_SIZE   9
+#define BUFFER_FRAME_SIZE   10
 
 uint16_t ips_bytes;
-uint16_t ips_data[2];
+uint16_t ips_data[3];
 uint16_t c_buff;
 uint16_t c_state;
 char ips_char[BUFFER_FRAME_SIZE];
