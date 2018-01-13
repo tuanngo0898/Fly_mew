@@ -67,6 +67,7 @@ void Copter::RYA_TT_run()
     // get pilot desired lean angles
     // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
     // cliSerial->printf("target_roll_pitch_remote: %f %f\n", target_roll, target_pitch);
+    cliSerial->printf("%d %d \n", ips_data[0], ips_data[1]);
 
     if (curr_roll >= 0.79 || curr_pitch >= 0.79 || curr_roll <= -0.79 || curr_pitch <= -0.79){
         time++;
@@ -94,7 +95,7 @@ void Copter::RYA_TT_run()
     // if(isThereaAnyObject){
     //     cliSerial->printf("errX_cm %f \n", X_dis_cm);
     // }
-
+    
     // Process information
     if (isThereaAnyObject && curr_roll < MAX_ANGEL && curr_roll > -MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL)
     {
@@ -119,7 +120,7 @@ void Copter::RYA_TT_run()
         target_pitch = 0;
     }
 
-    cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
+    // cliSerial -> printf(" real target roll, pitch: %f  %f \n",target_roll,target_pitch);
 
     // Use information
     AltHoldModeState althold_state;

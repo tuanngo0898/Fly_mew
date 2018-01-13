@@ -91,11 +91,6 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Compass/AP_Compass_AK8963.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Compass/AP_Compass_AK8963.cpp.0.o", 
-    "file": "../../libraries/AP_Compass/AP_Compass_AK8963.cpp"
-  }, 
-  {
-    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp.0.o", 
     "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp"
   }, 
@@ -226,11 +221,6 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Terrain/TerrainGCS.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Terrain/TerrainGCS.cpp.0.o", 
-    "file": "../../libraries/AP_Terrain/TerrainGCS.cpp"
-  }, 
-  {
-    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../libraries/AP_Baro/AP_Baro.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Baro/AP_Baro.cpp.2.o", 
     "file": "../../libraries/AP_Baro/AP_Baro.cpp"
   }, 
@@ -286,8 +276,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Empty/AnalogIn.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Empty/AnalogIn.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Empty/AnalogIn.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/GPIO_Aero.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/GPIO_Aero.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Linux/GPIO_Aero.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -396,8 +386,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/CameraSensor.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/CameraSensor.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Linux/CameraSensor.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Airspeed/AP_Airspeed_Backend.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Airspeed/AP_Airspeed_Backend.cpp.0.o", 
+    "file": "../../libraries/AP_Airspeed/AP_Airspeed_Backend.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -426,8 +416,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp.0.o", 
-    "file": "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/ArduCopter.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/ArduCopter.cpp.19.o", 
+    "file": "../../ArduCopter/ArduCopter.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -491,8 +481,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/baro_ground_effect.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/baro_ground_effect.cpp.19.o", 
-    "file": "../../ArduCopter/baro_ground_effect.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RPM/RPM_SITL.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RPM/RPM_SITL.cpp.0.o", 
+    "file": "../../libraries/AP_RPM/RPM_SITL.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -511,8 +501,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Camera/AP_Camera.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Camera/AP_Camera.cpp.0.o", 
-    "file": "../../libraries/AP_Camera/AP_Camera.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Motors/AP_MotorsTri.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Motors/AP_MotorsTri.cpp.0.o", 
+    "file": "../../libraries/AP_Motors/AP_MotorsTri.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -656,8 +646,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RPM/RPM_SITL.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RPM/RPM_SITL.cpp.0.o", 
-    "file": "../../libraries/AP_RPM/RPM_SITL.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/baro_ground_effect.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/baro_ground_effect.cpp.19.o", 
+    "file": "../../ArduCopter/baro_ground_effect.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -666,8 +656,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/RangeFinder_Backend.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/RangeFinder_Backend.cpp.0.o", 
-    "file": "../../libraries/AP_RangeFinder/RangeFinder_Backend.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/Util.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/Util.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Linux/Util.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -746,6 +736,11 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Empty/AnalogIn.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Empty/AnalogIn.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Empty/AnalogIn.cpp"
+  }, 
+  {
+    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_InertialSensor/AP_InertialSensor_SITL.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_InertialSensor/AP_InertialSensor_SITL.cpp.0.o", 
     "file": "../../libraries/AP_InertialSensor/AP_InertialSensor_SITL.cpp"
   }, 
@@ -771,8 +766,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/heli.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/heli.cpp.19.o", 
+    "file": "../../ArduCopter/heli.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -826,8 +821,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp.0.o", 
-    "file": "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp.0.o", 
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -836,8 +831,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Airspeed/AP_Airspeed_Backend.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Airspeed/AP_Airspeed_Backend.cpp.0.o", 
-    "file": "../../libraries/AP_Airspeed/AP_Airspeed_Backend.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/CameraSensor.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/CameraSensor.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Linux/CameraSensor.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1021,6 +1016,11 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BoardConfig/canbus.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BoardConfig/canbus.cpp.0.o", 
+    "file": "../../libraries/AP_BoardConfig/canbus.cpp"
+  }, 
+  {
+    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Notify/DiscoLED.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Notify/DiscoLED.cpp.0.o", 
     "file": "../../libraries/AP_Notify/DiscoLED.cpp"
   }, 
@@ -1066,6 +1066,11 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp.0.o", 
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp"
+  }, 
+  {
+    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/DataFlash/DataFlash_Block.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/DataFlash/DataFlash_Block.cpp.0.o", 
     "file": "../../libraries/DataFlash/DataFlash_Block.cpp"
   }, 
@@ -1081,8 +1086,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Relay/AP_Relay.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Relay/AP_Relay.cpp.0.o", 
-    "file": "../../libraries/AP_Relay/AP_Relay.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/RCInput.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/RCInput.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Linux/RCInput.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1108,6 +1113,11 @@
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/capabilities.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/capabilities.cpp.19.o", 
     "file": "../../ArduCopter/capabilities.cpp"
+  }, 
+  {
+    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp.0.o", 
+    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1196,8 +1206,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/ArduCopter.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/ArduCopter.cpp.19.o", 
-    "file": "../../ArduCopter/ArduCopter.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp.0.o", 
+    "file": "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1266,11 +1276,6 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp.0.o", 
-    "file": "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp"
-  }, 
-  {
-    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/DataFlash/LogFile.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/DataFlash/LogFile.cpp.0.o", 
     "file": "../../libraries/DataFlash/LogFile.cpp"
   }, 
@@ -1281,8 +1286,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp.0.o", 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp.0.o", 
+    "file": "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1411,11 +1416,6 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/GPIO_Aero.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/GPIO_Aero.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Linux/GPIO_Aero.cpp"
-  }, 
-  {
-    "directory": "/home/light/github/Fly_mew/build/bbbmini", 
     "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BattMonitor/AP_BattMonitor_Bebop.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor_Bebop.cpp.0.o", 
     "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_Bebop.cpp"
   }, 
@@ -1511,8 +1511,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../libraries/AP_BattMonitor/AP_BattMonitor.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor.cpp.2.o", 
-    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp.0.o", 
+    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1526,8 +1526,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Baro/AP_Baro_HIL.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Baro/AP_Baro_HIL.cpp.0.o", 
-    "file": "../../libraries/AP_Baro/AP_Baro_HIL.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Stats/AP_Stats.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Stats/AP_Stats.cpp.0.o", 
+    "file": "../../libraries/AP_Stats/AP_Stats.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1636,8 +1636,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/Util.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/Util.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Linux/Util.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/RangeFinder_Backend.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/RangeFinder_Backend.cpp.0.o", 
+    "file": "../../libraries/AP_RangeFinder/RangeFinder_Backend.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1746,13 +1746,13 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp.0.o", 
-    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor_qflight.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../libraries/AP_BattMonitor/AP_BattMonitor.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor.cpp.2.o", 
+    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Stats/AP_Stats.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Stats/AP_Stats.cpp.0.o", 
-    "file": "../../libraries/AP_Stats/AP_Stats.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Baro/AP_Baro_HIL.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Baro/AP_Baro_HIL.cpp.0.o", 
+    "file": "../../libraries/AP_Baro/AP_Baro_HIL.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1766,8 +1766,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Airspeed/Airspeed_Calibration.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Airspeed/Airspeed_Calibration.cpp.0.o", 
-    "file": "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../libraries/AP_AHRS/AP_AHRS.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_AHRS/AP_AHRS.cpp.2.o", 
+    "file": "../../libraries/AP_AHRS/AP_AHRS.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1931,8 +1931,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp.0.o", 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp.0.o", 
+    "file": "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -1956,8 +1956,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Motors/AP_MotorsTri.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Motors/AP_MotorsTri.cpp.0.o", 
-    "file": "../../libraries/AP_Motors/AP_MotorsTri.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Camera/AP_Camera.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Camera/AP_Camera.cpp.0.o", 
+    "file": "../../libraries/AP_Camera/AP_Camera.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -2011,8 +2011,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DFRAME_CONFIG=HELI_FRAME -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../ArduCopter/heli.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/ArduCopter/heli.cpp.19.o", 
-    "file": "../../ArduCopter/heli.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp.0.o", 
+    "file": "../../libraries/AP_HAL_Linux/OpticalFlow_Onboard.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -2031,8 +2031,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp.0.o", 
-    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Terrain/TerrainGCS.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Terrain/TerrainGCS.cpp.0.o", 
+    "file": "../../libraries/AP_Terrain/TerrainGCS.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -2051,8 +2051,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_HAL_Linux/RCInput.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_HAL_Linux/RCInput.cpp.0.o", 
-    "file": "../../libraries/AP_HAL_Linux/RCInput.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Relay/AP_Relay.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Relay/AP_Relay.cpp.0.o", 
+    "file": "../../libraries/AP_Relay/AP_Relay.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -2176,8 +2176,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI -DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter '-DSKETCH=\"ArduCopter\"' '-DSKETCHNAME=\"ArduCopter\"' ../../libraries/AP_AHRS/AP_AHRS.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_AHRS/AP_AHRS.cpp.2.o", 
-    "file": "../../libraries/AP_AHRS/AP_AHRS.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Airspeed/Airspeed_Calibration.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Airspeed/Airspeed_Calibration.cpp.0.o", 
+    "file": "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
@@ -2246,8 +2246,8 @@
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
-    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_BoardConfig/canbus.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_BoardConfig/canbus.cpp.0.o", 
-    "file": "../../libraries/AP_BoardConfig/canbus.cpp"
+    "command": "/usr/bin/arm-linux-gnueabihf-g++ -std=gnu++11 -fdata-sections -ffunction-sections -fno-exceptions -fsigned-char -Wall -Wextra -Wformat -Wshadow -Wpointer-arith -Wcast-align -Wundef -Wno-unused-parameter -Wno-missing-field-initializers -Wno-reorder -Wno-redundant-decls -Wno-unknown-pragmas -Werror=format-security -Werror=array-bounds -Werror=uninitialized -Werror=init-self -Werror=switch -Wfatal-errors -Werror=unused-but-set-variable -O3 -include ap_config.h -Ilibraries -Ilibraries/GCS_MAVLink -I. -I../../libraries -I../../libraries/AP_Common/missing '-DSKETCHBOOK=\"/home/light/github/Fly_mew\"' -DCONFIG_HAL_BOARD=HAL_BOARD_LINUX -DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_LINUX_BBBMINI ../../libraries/AP_Compass/AP_Compass_AK8963.cpp -c -o/home/light/github/Fly_mew/build/bbbmini/libraries/AP_Compass/AP_Compass_AK8963.cpp.0.o", 
+    "file": "../../libraries/AP_Compass/AP_Compass_AK8963.cpp"
   }, 
   {
     "directory": "/home/light/github/Fly_mew/build/bbbmini", 
