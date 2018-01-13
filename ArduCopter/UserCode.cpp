@@ -4,9 +4,12 @@
 #include "pid.h"
 
 Buzzer buzzer;
+PID pid_roll;
+PID pid_pitch;
 
 #ifdef USERHOOK_INIT
-void Copter::userhook_init()
+    void
+    Copter::userhook_init()
 {
     // put your initialisation code here
     // this will be called once at start-up
@@ -16,8 +19,8 @@ void Copter::userhook_init()
     s16_US_HEIGHT = 156;
     optflow.init();
 
-    // pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
-    // pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
+    pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
+    pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
     
     buzzer.init();
 }
@@ -27,6 +30,9 @@ void Copter::userhook_init()
 void Copter::userhook_FastLoop()
 {
     // put your 100Hz code here
+
+    pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
+    pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
 
     // uartF: serial5, baud 115200
 //================================IPS_POSITION====================================//

@@ -5,7 +5,7 @@
 
 class PID
 {
-public:
+  public:
     typedef struct
     {
         float Kp;
@@ -29,12 +29,12 @@ public:
     PID();
     ~PID();
 
-    float pid_process(float error,uint32_t time);
+    float pid_process(float error, uint32_t time);
     void pid_reset();
-    void pid_set_k_params(float Kp,float Ki, float Kd, float Ts, float PID_Saturation);
+    void pid_set_k_params(float Kp, float Ki, float Kd, float Ts, float PID_Saturation);
 
-private:
-   PID_PARAMETERS pid_param;
+  private:
+    PID_PARAMETERS pid_param;
 };
 
 #endif // PID_H

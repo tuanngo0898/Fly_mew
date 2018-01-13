@@ -1,7 +1,6 @@
 #include <time.h>
 #include "pid.h"
 #include "utility.h"
-#include "Copter.h"
 
 //#define __USE_PID_METHOD1__
 //#define __DEBUG_PID__
@@ -31,19 +30,15 @@ PID::~PID()
 
 void PID::pid_set_k_params(float Kp, float Ki, float Kd, float Ts, float PID_Saturation)
 {
-    pid_param.Kp = g.RYA_PID_P;
-    pid_param.Ki = g.RYA_PID_I;
-    pid_param.Kd = g.RYA_PID_D;
+    pid_param.Kp = Kp;
+    pid_param.Ki = Ki;
+    pid_param.Kd = Kd;
     //pid_param.Ts = Ts;
     pid_param.PID_Saturation = PID_Saturation;
 }
 
 float PID::pid_process(float error, uint32_t time)
 {
-    pid_param.Kp = g.RYA_PID_P;
-    pid_param.Ki = g.RYA_PID_I;
-    pid_param.Kd = g.RYA_PID_D;
-    
     float pre_dpart;
     uint32_t pre_time;
 

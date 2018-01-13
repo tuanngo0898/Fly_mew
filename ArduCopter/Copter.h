@@ -93,8 +93,6 @@
 #include <AP_Arming/AP_Arming.h>
 #include <AP_VisualOdom/AP_VisualOdom.h>
 
-#include "pid.h"
-
 // Configuration
 #include "defines.h"
 #include "config.h"
@@ -133,8 +131,6 @@
 #include <SITL/SITL.h>
 #endif
 
-#include "pid.h"
-
 class Copter : public AP_HAL::HAL::Callbacks {
 public:
     friend class GCS_MAVLINK_Copter;
@@ -155,8 +151,6 @@ public:
 
   private:
 
-    PID pid_roll;
-    PID pid_pitch;
     // key aircraft parameters passed to multiple libraries
     AP_Vehicle::MultiCopter aparm;
 
