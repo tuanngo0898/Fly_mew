@@ -29,7 +29,8 @@ bool Copter::RYA_TT_init(bool ignore_checks)
 void Copter::RYA_TT_run()
 {
     float target_roll, target_pitch;
-    target_roll = target_roll_user;
+    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    // target_roll = target_roll_user;
     target_pitch = target_pitch_user;
     
     // Use information
@@ -44,8 +45,7 @@ void Copter::RYA_TT_run()
     update_simple_mode();
 
     // get pilot desired lean angles
-    // get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-
+    
     // get pilot's desired yaw rate
     float target_yaw_rate = get_pilot_desired_yaw_rate(channel_yaw->get_control_in());
 

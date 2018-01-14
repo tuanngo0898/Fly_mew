@@ -9,20 +9,19 @@ PID pid_pitch;
 int buzzer_ifg = 0;
 
 #ifdef USERHOOK_INIT
-    void
-    Copter::userhook_init()
+void Copter::userhook_init()
 {
     // put your initialisation code here
     // this will be called once at start-up
-    c_buff = 0;     //0: temp-buf
-    c_state = 0;    //0: wait-start-buff, 1: data-buffer, 2: end-buffer-->0
+    c_buff = 0;  //0: temp-buf
+    c_state = 0; //0: wait-start-buff, 1: data-buffer, 2: end-buffer-->0
     ips_bytes = 0;
     s16_US_HEIGHT = 156;
     optflow.init();
 
-    pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
-    pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
-    
+    pid_roll.pid_set_k_params(g.RYA_PID_P_ROLL, g.RYA_PID_I_ROLL, g.RYA_PID_D_ROLL, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
+    pid_pitch.pid_set_k_params(g.RYA_PID_P_PITCH, g.RYA_PID_I_PITCH, g.RYA_PID_D_PITCH, 0.01, 1000);
+
     buzzer.init();
 }
 #endif
@@ -32,36 +31,42 @@ void Copter::userhook_FastLoop()
 {
     // put your 100Hz code here
 
-    pid_roll.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
-    pid_pitch.pid_set_k_params(g.RYA_PID_P, g.RYA_PID_I, g.RYA_PID_D, 0.01, 1000);
+    pid_roll.pid_set_k_params(g.RYA_PID_P_ROLL, g.RYA_PID_I_ROLL, g.RYA_PID_D_ROLL, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
+    pid_pitch.pid_set_k_params(g.RYA_PID_P_PITCH, g.RYA_PID_I_PITCH, g.RYA_PID_D_PITCH, 0.01, 1000);
 
     // pid_roll.pid_set_k_params(1,0,1, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
     // pid_pitch.pid_set_k_params(1,0,1, 0.01, 1000);
 
     // uartF: serial5, baud 115200
-//================================IPS_POSITION====================================//
+    //================================IPS_POSITION====================================//
     // Get available bytes
     ips_bytes = hal.uartF->available();
-    while (ips_bytes-- > 0) {
+    while (ips_bytes-- > 0)
+    {
         // Get data string here
         ips_char[0] = hal.uartF->read();
-        if(ips_char[0] == 's'){
+        if (ips_char[0] == 's')
+        {
             c_buff = 1;
             c_state = 1;
         }
-        else if(ips_char[0] == 'e'){
+        else if (ips_char[0] == 'e')
+        {
             // end-of-frame: get ips_pos & time_stamp
-            if(ips_char[5] ==','){
+            if (ips_char[5] == ',')
+            {
                 // valid frame
                 ips_data[0] = ips_char[1] - 0x30;
-                ips_data[1] = (ips_char[2]-0x30)*100 + (ips_char[3]-0x30)*10 + (ips_char[4]-0x30); //pos_x
-                ips_data[2] = (ips_char[6]-0x30)*100 + (ips_char[7]-0x30)*10 + (ips_char[8]-0x30); //pos_y
+                ips_data[1] = (ips_char[2] - 0x30) * 100 + (ips_char[3] - 0x30) * 10 + (ips_char[4] - 0x30); //pos_x
+                ips_data[2] = (ips_char[6] - 0x30) * 100 + (ips_char[7] - 0x30) * 10 + (ips_char[8] - 0x30); //pos_y
             }
             c_buff = 0;
             c_state = 0;
         }
-        else{
-            if(c_state == 1){
+        else
+        {
+            if (c_state == 1)
+            {
                 ips_char[c_buff] = ips_char[0];
                 // hal.uartF->printf("%c",ips_char[c_buff]);
                 c_buff++;
@@ -77,7 +82,7 @@ void Copter::userhook_FastLoop()
 
     int isThereaAnyObject = ips_data[0];
     // cliSerial->printf("isThereaAnyObject %d \n", isThereaAnyObject);
-    
+
     int X_err_in_pixel = ips_data[1] - 320;
     int Y_err_in_pixel = ips_data[2] - 240;
 
@@ -87,7 +92,7 @@ void Copter::userhook_FastLoop()
     if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
     {
         buzzer_ifg = 1;
-        buzzer.on(true);
+        // buzzer.on(true);
         //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
         float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         // cliSerial->printf("height: %f \n", curr_height);
@@ -101,7 +106,7 @@ void Copter::userhook_FastLoop()
     else
     {
         buzzer_ifg = 0;
-        buzzer.on(false);
+        // buzzer.on(false);
         target_roll_user = 0;
         target_pitch_user = 0;
     }
@@ -120,31 +125,31 @@ void Copter::userhook_50Hz()
 void Copter::userhook_MediumLoop()
 {
     // put your 20Hz code here
-//==============================TEMPERATURE======================================//
+    //==============================TEMPERATURE======================================//
     air_temperature = barometer.get_temperature();
     // hal.uartF->printf("temp:%f",air_temperature);
 
-//==============================IPS_TRANSMIT======================================//
+    //==============================IPS_TRANSMIT======================================//
     hal.uartE->printf("{PARAM,TRIGGER_US}\n");
-    ips_delay_ms = AP_HAL::millis();    // trigger IPS_transmission on Tiva C
+    ips_delay_ms = AP_HAL::millis(); // trigger IPS_transmission on Tiva C
 }
 #endif
 
 #ifdef USERHOOK_SLOWLOOP
-int buzzer_ifg2 = 0;
+int buzzer_ifg2 =0;
 void Copter::userhook_SlowLoop()
 {
-    // put your 3.3Hz code here
-    // if (buzzer_ifg == 1)
-    //     {
-    //         buzzer_ifg2++;
-    //         if(buzzer_ifg2%2)
-    //             buzzer.on(true);
-    //         else
-    //             buzzer.on(false);
-    //     }
-    // else
-    //     buzzer.on(false);
+    //put your 3.3Hz code here
+    if (buzzer_ifg == 1)
+        {
+            buzzer_ifg2++;
+            if(buzzer_ifg2%2)
+                buzzer.on(true);
+            else
+                buzzer.on(false);
+        }
+    else
+        buzzer.on(false);
 }
 #endif
 
