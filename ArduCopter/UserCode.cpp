@@ -87,7 +87,7 @@ void Copter::userhook_FastLoop()
     if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
     {
         buzzer_ifg = 1;
-        //buzzer.on(true);
+        buzzer.on(true);
         //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
         float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
         // cliSerial->printf("height: %f \n", curr_height);
@@ -101,7 +101,7 @@ void Copter::userhook_FastLoop()
     else
     {
         buzzer_ifg = 0;
-        //buzzer.on(false);
+        buzzer.on(false);
         target_roll_user = 0;
         target_pitch_user = 0;
     }
@@ -135,16 +135,16 @@ int buzzer_ifg2 = 0;
 void Copter::userhook_SlowLoop()
 {
     // put your 3.3Hz code here
-    if (buzzer_ifg == 1)
-        {
-            buzzer_ifg2++;
-            if(buzzer_ifg2%2)
-                buzzer.on(true);
-            else
-                buzzer.on(false);
-        }
-    else
-        buzzer.on(false);
+    // if (buzzer_ifg == 1)
+    //     {
+    //         buzzer_ifg2++;
+    //         if(buzzer_ifg2%2)
+    //             buzzer.on(true);
+    //         else
+    //             buzzer.on(false);
+    //     }
+    // else
+    //     buzzer.on(false);
 }
 #endif
 

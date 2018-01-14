@@ -1,3 +1,3 @@
 #pragma once
 
-#define GIT_VERSION "ab6eaa45"
+#define GIT_VERSION "9a1e54c4"
