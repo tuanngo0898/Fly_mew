@@ -368,6 +368,14 @@ public:
         k_param_RYA_PID_P,
         k_param_RYA_PID_I,
         k_param_RYA_PID_D,
+
+        k_param_RYA_PID_P_ROLL,
+        k_param_RYA_PID_I_ROLL,
+        k_param_RYA_PID_D_ROLL,
+
+        k_param_RYA_PID_P_PITCH,
+        k_param_RYA_PID_I_PITCH,
+        k_param_RYA_PID_D_PITCH,
         // 254,255: reserved
 
         // the k_param_* space is 9-bits in size
@@ -378,7 +386,15 @@ public:
     AP_Float RYA_PID_I;
     AP_Float RYA_PID_D;
 
-        AP_Int16 format_version;
+    AP_Float RYA_PID_P_ROLL;
+    AP_Float RYA_PID_I_ROLL;
+    AP_Float RYA_PID_D_ROLL;
+
+    AP_Float RYA_PID_P_PITCH;
+    AP_Float RYA_PID_I_PITCH;
+    AP_Float RYA_PID_D_PITCH;
+
+    AP_Int16 format_version;
     AP_Int8         software_type;
 
     // Telemetry control

@@ -662,3 +662,27 @@
 #ifndef RYA_PID_D_DEFAULT
 #define RYA_PID_D_DEFAULT 1 // default value for RYA_PID_D_DEFAULT
 #endif
+
+#ifndef RYA_PID_P_ROLL_DEFAULT
+#define RYA_PID_P_ROLL_DEFAULT 1 // default value for RYA_PID_P_DEFAULT
+#endif
+
+#ifndef RYA_PID_I_ROLL_DEFAULT
+#define RYA_PID_I_ROLL_DEFAULT 0 // default value for RYA_PID_I_DEFAULT
+#endif
+
+#ifndef RYA_PID_D_ROLL_DEFAULT
+#define RYA_PID_D_ROLL_DEFAULT 1 // default value for RYA_PID_D_DEFAULT
+#endif
+
+#ifndef RYA_PID_P_PITCH_DEFAULT
+#define RYA_PID_P_PITCH_DEFAULT 1 // default value for RYA_PID_P_DEFAULT
+#endif
+
+#ifndef RYA_PID_I_PITCH_DEFAULT
+#define RYA_PID_I_PITCH_DEFAULT 0 // default value for RYA_PID_I_DEFAULT
+#endif
+
+#ifndef RYA_PID_D_PITCH_DEFAULT
+#define RYA_PID_D_PITCH_DEFAULT 1 // default value for RYA_PID_D_DEFAULT
+#endif
