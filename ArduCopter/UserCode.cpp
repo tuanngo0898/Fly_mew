@@ -6,6 +6,7 @@
 Buzzer buzzer;
 PID pid_roll;
 PID pid_pitch;
+int buzzer_ifg = 0;
 
 #ifdef USERHOOK_INIT
     void
@@ -85,6 +86,7 @@ void Copter::userhook_FastLoop()
     // Process information
     if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
     {
+        buzzer_ifg = 1;
         //buzzer.on(true);
         //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
         float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
@@ -98,6 +100,7 @@ void Copter::userhook_FastLoop()
     }
     else
     {
+        buzzer_ifg = 0;
         //buzzer.on(false);
         target_roll_user = 0;
         target_pitch_user = 0;
@@ -128,9 +131,20 @@ void Copter::userhook_MediumLoop()
 #endif
 
 #ifdef USERHOOK_SLOWLOOP
+int buzzer_ifg2 = 0;
 void Copter::userhook_SlowLoop()
 {
     // put your 3.3Hz code here
+    if (buzzer_ifg == 1)
+        {
+            buzzer_ifg2++;
+            if(buzzer_ifg2%2)
+                buzzer.on(true);
+            else
+                buzzer.on(false);
+        }
+    else
+        buzzer.on(false);
 }
 #endif
 
