@@ -686,3 +686,11 @@
 #ifndef RYA_PID_D_PITCH_DEFAULT
 #define RYA_PID_D_PITCH_DEFAULT 1 // default value for RYA_PID_D_DEFAULT
 #endif
+
+#ifndef RYA_RYA_OFFSET_ROLL_DEFAULT
+#define RYA_RYA_OFFSET_ROLL_DEFAULT 0 // default value for RYA_PID_D_DEFAULT
+#endif
+
+#ifndef RYA_RYA_OFFSET_PITCH_DEFAULT
+#define RYA_RYA_OFFSET_PITCH_DEFAULT 0 // default value for RYA_PID_D_DEFAULT
+#endif

@@ -376,6 +376,9 @@ public:
         k_param_RYA_PID_P_PITCH,
         k_param_RYA_PID_I_PITCH,
         k_param_RYA_PID_D_PITCH,
+
+        k_param_RYA_OFFSET_ROLL,
+        k_param_RYA_OFFSET_PITCH,
         // 254,255: reserved
 
         // the k_param_* space is 9-bits in size
@@ -393,6 +396,9 @@ public:
     AP_Float RYA_PID_P_PITCH;
     AP_Float RYA_PID_I_PITCH;
     AP_Float RYA_PID_D_PITCH;
+
+    AP_Int16 RYA_OFFSET_ROLL;
+    AP_Int16 RYA_OFFSET_PITCH;
 
     AP_Int16 format_version;
     AP_Int8         software_type;

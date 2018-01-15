@@ -93,6 +93,20 @@ const AP_Param::Info Copter::var_info[] = {
     // @User: Advanced
     GSCALAR(RYA_PID_D_PITCH, "RYA_PID_D_PITCH", RYA_PID_D_PITCH_DEFAULT),
 
+    // @Param: MY_NEW_PARAMETER
+    // @DisplayName: My New Parameter
+    // @Description: A description of my new parameter goes here
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(RYA_OFFSET_ROLL, "RYA_OFFSET_ROLL", RYA_OFFSET_ROLL_DEFAULT),
+
+    // @Param: MY_NEW_PARAMETER
+    // @DisplayName: My New Parameter
+    // @Description: A description of my new parameter goes here
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(RYA_OFFSET_PITCH, "RYA_OFFSET_PITCH", RYA_OFFSET_PITCH_DEFAULT),
+
     // @Param: SYSID_SW_MREV
     // @DisplayName: Eeprom format version number
     // @Description: This value is incremented when changes are made to the eeprom format
