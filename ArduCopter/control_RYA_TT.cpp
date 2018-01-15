@@ -30,8 +30,8 @@ void Copter::RYA_TT_run()
 {
     float target_roll, target_pitch;
     get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-    // target_roll = target_roll_user;
-    target_pitch = target_pitch_user;
+    target_roll = target_roll_user - 100;
+    target_pitch = target_pitch_user + 100;
     
     // Use information
     AltHoldModeState althold_state;
