@@ -109,10 +109,10 @@ void Copter::userhook_FastLoop()
     if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
     {
         buzzer_ifg = 1;
-        //buzzer.on(true);
+        buzzer.on(true);
         //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
         // float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
-        float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+        float pixel_per_cm = curr_height * 0.5543090515 * 2 / 800;
         // cliSerial->printf("height: %f \n", curr_height);
 
         tiltCompensate(&X_err_in_pixel, &Y_err_in_pixel, curr_roll, curr_pitch);
@@ -123,14 +123,12 @@ void Copter::userhook_FastLoop()
         // cliSerial->printf("sttt: %d %d \n", X_err_in_cm, Y_err_in_cm);
 
         target_roll_user = pid_roll.pid_process(X_err_in_cm, millis());
-        target_pitch_user = pid_pitch.pid_process(Y_err_in_cm, millis());
-
-        
+        target_pitch_user = pid_pitch.pid_process(Y_err_in_cm, millis());    
     }
     else
     {
         buzzer_ifg = 0;
-        // buzzer.on(false);
+        buzzer.on(false);
         target_roll_user = 0;
         target_pitch_user = 0;
     }
