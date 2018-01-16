@@ -14,15 +14,15 @@
 Buzzer buzzer;
 PID pid_roll;
 PID pid_pitch;
-int buzzer_ifg = 0;
+// int buzzer_ifg = 0;
 
 // recommended PID params Kp:6 Ki:0 Kd:9 for 20hz frame rate, image resolution: 320*240
 // PID input: error in pixels, PID output: centidegree, saturate at +- 1500 centidegrees.
 
-void tiltCompensate(int *rollErr, int *pitchErr, float currentRoll, float currentPitch)
+void tiltCompensate(int *X_Err, int *Y_Err, float currentRoll, float currentPitch)
 {
-    *pitchErr = *pitchErr - tanf(currentPitch) * FOCAL_PIXEL_Y;
-    *rollErr = *rollErr - tanf(currentRoll) * FOCAL_PIXEL_X;
+    *X_Err = *X_Err + tanf(currentRoll) * FOCAL_PIXEL_X;
+    *Y_Err = *Y_Err + tanf(currentPitch) * FOCAL_PIXEL_Y;
 }
 
 #ifdef USERHOOK_INIT
@@ -42,6 +42,12 @@ void Copter::userhook_init()
     buzzer.init();
 }
 #endif
+
+int old_X_err_in_pixel = 0;
+int old_Y_err_in_pixel = 0;
+
+float old_target_roll = 0;
+float old_target_pitch = 0;
 
 #ifdef USERHOOK_FASTLOOP
 void Copter::userhook_FastLoop()
@@ -106,31 +112,44 @@ void Copter::userhook_FastLoop()
     // cliSerial->printf("px: %d %d \n", X_err_in_pixel, Y_err_in_pixel);
 
     // Process information
-    if (isThereaAnyObject) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
-    {
-        buzzer_ifg = 1;
+    if (isThereaAnyObject){
         buzzer.on(true);
-        //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
-        // float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
-        float pixel_per_cm = curr_height * 0.5543090515 * 2 / 800;
-        // cliSerial->printf("height: %f \n", curr_height);
+        if (old_X_err_in_pixel != X_err_in_pixel && old_Y_err_in_pixel != Y_err_in_pixel) //&& curr_roll < MAX_ANGEL && curr_roll >- MAX_ANGEL && curr_pitch < MAX_ANGEL && curr_pitch > -MAX_ANGEL )
+        {
+            old_X_err_in_pixel = X_err_in_pixel;
+            old_Y_err_in_pixel = Y_err_in_pixel;
 
-        tiltCompensate(&X_err_in_pixel, &Y_err_in_pixel, curr_roll, curr_pitch);
+            // buzzer_ifg = 1;
+            // buzzer.on(true);
+            //buzzer.play_pattern(Buzzer::BuzzerPattern::ARMING_BUZZ);
+            // float pixel_per_cm = curr_height * 0.8871428438 * 2 / 800;
+            float pixel_per_cm = curr_height * 0.5543090515 * 2 / 800;
+            // cliSerial->printf("height: %f \n", curr_height);
 
-        int X_err_in_cm = X_err_in_pixel * pixel_per_cm;
-        int Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
-        
-        // cliSerial->printf("sttt: %d %d \n", X_err_in_cm, Y_err_in_cm);
+            tiltCompensate(&X_err_in_pixel, &Y_err_in_pixel, curr_roll, curr_pitch);
 
-        target_roll_user = pid_roll.pid_process(X_err_in_cm, millis());
-        target_pitch_user = pid_pitch.pid_process(Y_err_in_cm, millis());    
+            int X_err_in_cm = X_err_in_pixel * pixel_per_cm;
+            int Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
+
+            // cliSerial->printf("X_err Y_err %d %d: \n", X_err_in_cm, Y_err_in_cm);
+
+            // cliSerial->printf("sttt: %d %d \n", X_err_in_cm, Y_err_in_cm);
+
+            target_roll_user = pid_roll.pid_process(X_err_in_cm, millis());
+            old_target_roll = target_roll_user;
+
+            target_pitch_user = pid_pitch.pid_process(Y_err_in_cm, millis());
+            old_target_pitch = target_pitch_user;
+        }
+        else
+        {
+            // buzzer_ifg = 0;
+            target_roll_user = old_target_roll;
+            target_pitch_user = old_target_pitch;
+        }
     }
-    else
-    {
-        buzzer_ifg = 0;
+    else{
         buzzer.on(false);
-        target_roll_user = 0;
-        target_pitch_user = 0;
     }
     // cliSerial->printf("tg: %f %f \n", target_roll_user, target_pitch_user);
 }
@@ -158,20 +177,20 @@ void Copter::userhook_MediumLoop()
 #endif
 
 #ifdef USERHOOK_SLOWLOOP
-int buzzer_ifg2 = 0;
+// int buzzer_ifg2 = 0;
 void Copter::userhook_SlowLoop()
 {
-    // put your 3.3Hz code here
-    if (buzzer_ifg == 1)
-        {
-            buzzer_ifg2++;
-            if(buzzer_ifg2%2)
-                buzzer.on(true);
-            else
-                buzzer.on(false);
-        }
-    else
-        buzzer.on(false);
+    // // put your 3.3Hz code here
+    // if (buzzer_ifg == 1)
+    //     {
+    //         buzzer_ifg2++;
+    //         if(buzzer_ifg2%2)
+    //             buzzer.on(true);
+    //         else
+    //             buzzer.on(false);
+    //     }
+    // else
+    //     buzzer.on(false);
 }
 #endif
 
