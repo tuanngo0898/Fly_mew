@@ -54,8 +54,8 @@ void Copter::userhook_FastLoop()
 {
     // put your 100Hz code here
 
-    pid_roll.pid_set_k_params(g.RYA_PID_P_ROLL, g.RYA_PID_I_ROLL, g.RYA_PID_D_ROLL, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
-    pid_pitch.pid_set_k_params(g.RYA_PID_P_PITCH, g.RYA_PID_I_PITCH, g.RYA_PID_D_PITCH, 0.01, 1000);
+    pid_roll.pid_set_k_params(g.RYA_PID_P_ROLL, g.RYA_PID_I_ROLL, g.RYA_PID_D_ROLL, 0.01, 1000 - abs(g.RYA_OFFSET_ROLL)); // 0.1, 0, 0.125, 0.01, 1000
+    pid_pitch.pid_set_k_params(g.RYA_PID_P_PITCH, g.RYA_PID_I_PITCH, g.RYA_PID_D_PITCH, 0.01, 1000 - abs(g.RYA_OFFSET_PITCH));
 
     // pid_roll.pid_set_k_params(1,0,1, 0.01, 1000); // 0.1, 0, 0.125, 0.01, 1000
     // pid_pitch.pid_set_k_params(1,0,1, 0.01, 1000);
