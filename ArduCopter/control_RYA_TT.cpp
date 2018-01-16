@@ -1,3 +1,4 @@
+
 #include "Copter.h"
 
 /*
@@ -29,10 +30,20 @@ bool Copter::RYA_TT_init(bool ignore_checks)
 void Copter::RYA_TT_run()
 {
     float target_roll, target_pitch;
-    get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
-    target_roll = target_roll_user - 100;
-    target_pitch = target_pitch_user + 100;
-    
+   get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, attitude_control->get_althold_lean_angle_max());
+    target_roll = target_roll_user + g.RYA_OFFSET_ROLL;
+    target_pitch = target_pitch_user + g.RYA_OFFSET_PITCH;
+
+    if (target_roll > 1000) 
+        target_roll = 1000;
+    if (target_roll < -1000)
+        target_roll = -1000;
+
+    if (target_pitch > 1000)
+        target_pitch = 1000;
+    if (target_pitch < -1000)
+        target_pitch = -1000;
+
     // Use information
     AltHoldModeState althold_state;
     float takeoff_climb_rate = 0.0f;
@@ -77,6 +88,7 @@ void Copter::RYA_TT_run()
     {
         althold_state = AltHold_Flying;
     }
+
 
     // Alt Hold State Machine
     switch (althold_state)
@@ -167,6 +179,7 @@ void Copter::RYA_TT_run()
 
         // call position controller
         pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
+        // cliSerial->printf("set_alt_target_from_climb_rate_f: %f \n", target_climb_rate);
         pos_control->update_z_controller();
         break;
     }
