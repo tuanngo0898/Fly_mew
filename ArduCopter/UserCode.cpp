@@ -19,11 +19,11 @@ PID pid_pitch;
 // recommended PID params Kp:6 Ki:0 Kd:9 for 20hz frame rate, image resolution: 320*240
 // PID input: error in pixels, PID output: centidegree, saturate at +- 1500 centidegrees.
 
-void tiltCompensate(int *X_Err, int *Y_Err, float currentRoll, float currentPitch)
-{
-    *X_Err = *X_Err + tanf(currentRoll) * FOCAL_PIXEL_X;
-    *Y_Err = *Y_Err + tanf(currentPitch) * FOCAL_PIXEL_Y;
-}
+// void tiltCompensate(int *X_Err, int *Y_Err, float currentRoll, float currentPitch)
+// {
+//     *X_Err = *X_Err + tanf(currentRoll) * FOCAL_PIXEL_X;
+//     *Y_Err = *Y_Err + tanf(currentPitch) * FOCAL_PIXEL_Y;
+// }
 
 #ifdef USERHOOK_INIT
 void Copter::userhook_init()
@@ -91,26 +91,23 @@ void Copter::userhook_FastLoop()
             if (c_state == 1)
             {
                 ips_char[c_buff] = ips_char[0];
-                // hal.uartF->printf("%c",ips_char[c_buff]);
                 c_buff++;
             }
         }
     }
-
     // Get current information
     int height = rangefinder.distance_cm_orient(ROTATION_PITCH_270);
     float curr_height = (float)height; // cm
-    float curr_roll = ahrs.roll;       // rad
-    float curr_pitch = ahrs.pitch;     // rad
+    // float curr_roll = ahrs.roll;       // rad
+    // float curr_pitch = ahrs.pitch;     // rad
 
     int isThereaAnyObject = ips_data[0];
-    // cliSerial->printf("isThereaAnyObject %d \n", isThereaAnyObject);
+    //cliSerial->printf("isThereaAnyObject %d \n", isThereaAnyObject);
 
     int X_err_in_pixel = ips_data[1] - 320;
     int Y_err_in_pixel = ips_data[2] - 240;
 
     // cliSerial->printf("px: %d %d \n", X_err_in_pixel, Y_err_in_pixel);
-
     // Process information
     if (isThereaAnyObject){
         buzzer.on(true);
@@ -126,7 +123,7 @@ void Copter::userhook_FastLoop()
             float pixel_per_cm = curr_height * 0.5543090515 * 2 / 800;
             // cliSerial->printf("height: %f \n", curr_height);
 
-            tiltCompensate(&X_err_in_pixel, &Y_err_in_pixel, curr_roll, curr_pitch);
+            // tiltCompensate(&X_err_in_pixel, &Y_err_in_pixel, curr_roll, curr_pitch);
 
             int X_err_in_cm = X_err_in_pixel * pixel_per_cm;
             int Y_err_in_cm = Y_err_in_pixel * pixel_per_cm;
@@ -150,6 +147,8 @@ void Copter::userhook_FastLoop()
     }
     else{
         buzzer.on(false);
+        target_roll_user = 0;
+        target_pitch_user = 0;
     }
     // cliSerial->printf("tg: %f %f \n", target_roll_user, target_pitch_user);
 }
